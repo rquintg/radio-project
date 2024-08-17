@@ -1,9 +1,12 @@
 import './App.css';
+import NavBar from './layouts/navBar';
+import Home from './layouts/home';
 
 function App() {
   return (
    <div>
-     <h1>Hola</h1>
+      <NavBar />
+        <Home />
    </div>
   );
 }
