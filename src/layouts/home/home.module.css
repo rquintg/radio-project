@@ -26,8 +26,14 @@
 }
 
 .recentTrackWrapper {
-    display: flex;
-    justify-content: center; /* Centra el contenido horizontalmente */
-    align-items: center; /* Centra el contenido verticalmente */
+    position: absolute;
+    top: 20vh;
+    left: 40vw;
     height: 50vh; /* Ajusta según el tamaño deseado */
+    color: black;
+}
+
+.modal{
+    position: absolute; /* Fija la posición del modal */
+    top: 20%; /* Centra verticalmente */
 }
