@@ -5,11 +5,13 @@ export default function Home() {
     return (
         <>
             <div className={styles.container}>
-                <h1>Home</h1>
             </div>
-            <div className={styles.recentTrackWrapper}>
-                <RecentTrack />
-            </div>
+
+                <div className={styles.recentTrackWrapper}>
+                    <RecentTrack />
+                </div>
+
+
         </>
     );
 }

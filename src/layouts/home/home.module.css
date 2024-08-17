@@ -1,5 +1,5 @@
 .container {
-    position: relative; /* Necesario para la superposición */
+    position: absolute; /* Necesario para la superposición */
     background-image: url("../../img/fondo.jpeg");
     background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
     background-position: center; /* Centra la imagen en el contenedor */
@@ -9,7 +9,7 @@
     justify-content: center;
     height: 50vh;
     width: 100vw;
-    color: white;
+    color: black;
     z-index: 1; /* Asegura que el contenido esté sobre el pseudo-elemento */
 }
 
@@ -25,9 +25,13 @@
     pointer-events: none; /* Asegura que la superposición no bloquee la interacción */
 }
 
+
 .recentTrackWrapper {
-    display: flex;
-    justify-content: center; /* Centra el contenido horizontalmente */
-    align-items: center; /* Centra el contenido verticalmente */
+    position: absolute;
+    top: 20vh;
+    left: 40vw;
     height: 50vh; /* Ajusta según el tamaño deseado */
+    z-index: 1; /* Asegura que el contenido esté sobre el pseudo-elemento */
+
 }
+
