@@ -1,0 +1,10 @@
+/* songRequest.module.css */
+.container {
+    background-color: white; /* Fondo blanco para el componente */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0010px; /* Sombra sutil */
+    padding: 20px; /* Espaciado interno */
+    text-align: center; /* Alineación del texto al centro */
+    width: 300px; /* Ancho fijo para el cuadro */
+    height: auto; /* Alto automático basado en el contenido */
+}
