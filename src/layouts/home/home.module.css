@@ -28,7 +28,7 @@
 .recentTrackWrapper {
     position: absolute;
     top: 20vh;
-    left: 40vw;
+
     height: 50vh; /* Ajusta según el tamaño deseado */
     color: black;
 }
