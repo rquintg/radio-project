@@ -1,5 +1,3 @@
-import logo from '../../img/logo.png'
-
 export default function NavBar() {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-black" data-bs-theme="dark">
