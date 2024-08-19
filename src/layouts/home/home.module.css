@@ -37,3 +37,10 @@
     position: absolute; /* Fija la posición del modal */
     top: 20%; /* Centra verticalmente */
 }
+
+.positionFooter{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+}
