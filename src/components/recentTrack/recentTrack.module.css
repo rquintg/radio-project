@@ -1,4 +1,3 @@
-/* songRequest.module.css */
 .container {
     background-color: rgba(7, 7, 7, 0.56); /* Fondo blanco para el componente */
     border-radius: 8px; /* Bordes redondeados */
@@ -7,4 +6,5 @@
     text-align: center; /* Alineación del texto al centro */
     width: 40vw; /* Ancho fijo para el cuadro */
     height: auto; /* Alto automático basado en el contenido */
+    color: white; /* Texto blanco */
 }
