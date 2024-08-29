@@ -1,0 +1,62 @@
+.modal-content {
+    background-color: #343a40; /* Fondo oscuro */
+    color: #f8f9fa; /* Texto claro */
+    border: none;
+}
+
+.modal-header {
+    border-bottom: 1px solid #495057; /* Línea de separación tenue */
+}
+
+.modal-title {
+    color: #f8f9fa; /* Texto claro */
+}
+
+.btn-close {
+    filter: invert(1); /* Invertir colores del botón de cierre para modo oscuro */
+}
+
+.cc_request_f input[type="text"] {
+    background-color: #495057; /* Fondo oscuro para inputs */
+    color: #f8f9fa; /* Texto claro */
+    border: 1px solid #6c757d; /* Borde acorde al modo oscuro */
+    padding: 0.375rem 0.75rem;
+    margin-bottom: 0.75rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.cc_request_f input[type="button"] {
+    background-color: #6c757d; /* Botón con fondo oscuro */
+    color: #f8f9fa; /* Texto claro */
+    border: 1px solid #6c757d;
+    padding: 0.375rem 0.75rem;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.cc_request_f input[type="button"]:hover {
+    background-color: #5a6268; /* Fondo más oscuro al pasar el mouse */
+    border-color: #545b62;
+}
+
+.modal-footer .btn-secondary {
+    background-color: #6c757d; /* Botón de cerrar con fondo oscuro */
+    color: #f8f9fa; /* Texto claro */
+    border: 1px solid #6c757d;
+}
+
+.modal-footer .btn-secondary:hover {
+    background-color: #5a6268; /* Fondo más oscuro al pasar el mouse */
+    border-color: #545b62;
+}
+
+.cc_request_form *[data-type="result"],
+#cc_request_result {
+    padding: 3px 8px;
+    background-color: #a40202 !important;
+    margin-bottom: 5px;
+    display: none;
+    text-align: center;
+}
