@@ -41,15 +41,9 @@
     border-color: #545b62;
 }
 
-.modal-footer .btn-secondary {
-    background-color: #6c757d; /* Botón de cerrar con fondo oscuro */
-    color: #f8f9fa; /* Texto claro */
-    border: 1px solid #6c757d;
-}
-
-.modal-footer .btn-secondary:hover {
-    background-color: #5a6268; /* Fondo más oscuro al pasar el mouse */
-    border-color: #545b62;
+.modal-footer{
+    display: flex;
+    justify-content: center;
 }
 
 .cc_request_form *[data-type="result"],
