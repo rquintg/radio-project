@@ -11,13 +11,13 @@ export default function SongRequest() {
             mutations.forEach((mutation) => {
                 if (mutation.type === 'childList' && mutation.target.textContent.includes('Your song request has been submitted')) {
                     mutation.target.textContent = 'Tu solicitud de canción ha sido enviada - ¡gracias!';
-                } else if(mutation.type === 'childList' && mutation.target.textContent.includes('Sorry, your song request could not be submitted at this time.')) {
+                } else if (mutation.type === 'childList' && mutation.target.textContent.includes('Sorry, your song request could not be submitted at this time.')) {
                     mutation.target.textContent = 'Lo siento, tu solicitud de canción no pudo ser enviada en este momento.';
                 }
             });
         });
 
-        observer.observe(resultDiv, { childList: true });
+        observer.observe(resultDiv, {childList: true});
 
         return () => {
             observer.disconnect();
@@ -39,20 +39,29 @@ export default function SongRequest() {
                         <div className="modal-body">
                             <form className="cc_request_form  cc_request_f" data-username="demo">
                                 <div data-type="result"></div>
-                                Banda:* <input type="text" name="request[artist]" size="40" maxLength="127"/><br/>
-                                Cancion:* <input type="text" name="request[title]" size="40" maxLength="127"/><br/>
-                                Tu e-mail:* <input type="text" name="request[email]" size="40" maxLength="127"/><br/>
-                                Dedicado a: <input type="text" name="request[dedication]" size="40"
-                                                     maxLength="127"/><br/>
-                                Tu nombre: <input type="text" name="request[sender]" size="40" maxLength="127"/><br/>
-                                <input type="button" value="Solicitar" data-type="submit"/><br/>
+
+                                Banda: <i className="bi bi-arrow-left-short" style={{color: 'red'}}></i>
+                                <input type="text" name="request[artist]" size="40" maxLength="127"/>
+                                <br/>
+                                Cancion:<i className="bi bi-arrow-left-short" style={{color: 'red'}}></i>
+                                <input type="text" name="request[title]" size="40" maxLength="127"/>
+                                <br/>
+                                Correo:<i className="bi bi-arrow-left-short" style={{color: 'red'}}></i>
+                                <input type="text" name="request[email]" size="40" maxLength="127"/>
+                                <br/>
+                                Dedicado a: <input type="text" name="request[dedication]" size="40" maxLength="127"/>
+                                <br/>
+                                Tu nombre: <input type="text" name="request[sender]" size="40" maxLength="127"/>
+                                <br/>
+                                <input type="button" value="Solicitar" data-type="submit"/>
+                                <br/>
                             </form>
                         </div>
                         <div className="modal-footer">
-                            <span className="d-inline-block" tabIndex="0" data-bs-toggle="popover"
-                                  data-bs-trigger="hover focus" data-bs-content="Disabled popover">
-                            <button className="btn btn-primary" type="button" disabled>Disabled button</button>
-</span>
+                            <div
+                                className="p-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+                                Los campos con <i className="bi bi-arrow-left-short" style={{color: 'red'}}></i> son obligatorios
+                            </div>
                         </div>
                     </div>
                 </div>
