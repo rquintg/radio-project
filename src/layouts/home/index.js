@@ -1,6 +1,5 @@
 import styles from "./home.module.css";
 import RecentTrack from "../../components/recentTrack";
-import Footer from "../footer";
 
 export default function Home() {
     return (
@@ -11,8 +10,6 @@ export default function Home() {
                     <RecentTrack />
                 </div>
             </div>
-
-            <Footer />
         </>
     );
 }
