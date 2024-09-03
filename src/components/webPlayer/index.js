@@ -3,7 +3,7 @@ import styles from "./webPlayer.module.css";
 
 export default function WebPlayer() {
     return (
-        <div>
+        <div className="container">
            {/*<PunkPlayer
                url='https://stream10.usastreams.com/9316/stream'
                playing={true}
