@@ -1,5 +1,6 @@
 import styles from "./home.module.css";
 import RecentTrack from "../../components/recentTrack";
+import PunkPlayer from "../../components/webPlayer";
 
 export default function Home() {
     return (
@@ -10,6 +11,7 @@ export default function Home() {
                     <RecentTrack />
                 </div>
             </div>
+            <PunkPlayer/>
         </>
     );
 }
