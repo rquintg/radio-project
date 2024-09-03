@@ -9,7 +9,7 @@ export default function NavBar() {
 
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-black">
+            <nav className="navbar sticky-top navbar-expand-md navbar-dark bg-black">
                 <div className="container">
                     <a className="navbar-brand" href="/">
                         <i className="bi bi-broadcast" style={{fontSize: '1.875rem', color: 'red'}}></i>
