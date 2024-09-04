@@ -1,15 +1,11 @@
 import './App.css';
-import NavBar from './layouts/navBar';
-import Home from './layouts/home';
-import PunkPlayer from "./components/webPlayer";
+import MainRouter from "./routes";
 import Footer from "./layouts/footer";
 
 function App() {
   return (
    <div>
-       <NavBar />
-       <Home />
-       <PunkPlayer/>
+       <MainRouter/>
        <Footer />
    </div>
   );

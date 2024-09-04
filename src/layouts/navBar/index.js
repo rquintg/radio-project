@@ -1,6 +1,5 @@
-
-
 import SongRequest from "../../components/songRequest";
+import {NavLink} from "react-router-dom";
 
 
 export default function NavBar() {
@@ -22,10 +21,10 @@ export default function NavBar() {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="#">Inicio</a>
+                                <NavLink className="nav-link active" aria-current="page" to={'/'}>Inicio</NavLink>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Contacto</a>
+                                <NavLink className="nav-link" to={'/contact'}>Contacto</NavLink>
                             </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -33,7 +32,7 @@ export default function NavBar() {
                                     Dropdown
                                 </a>
                                 <ul className="dropdown-menu">
-                                    <li><a className="dropdown-item" href="#">Action</a></li>
+                                    <li><NavLink className="dropdown-item" to={'/about'}>Acerca de</NavLink></li>
                                     <li><a className="dropdown-item" href="#">Another action</a></li>
                                     <li>
                                         <hr className="dropdown-divider"/>
