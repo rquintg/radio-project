@@ -25,7 +25,9 @@ export default function ContactForm() {
             Swal.fire({
                 title: "Exito!",
                 text: "Tu mensaje ha sido enviado!",
-                icon: "success"
+                icon: "success",
+                background: '#19191a',
+                color: '#fff'
             });
         }
     };
