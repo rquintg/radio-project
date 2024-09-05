@@ -1,3 +1,5 @@
+import ContactForm from "../../components/contactForm";
+
 import styles from "./contact.module.css";
 
 import PunkM from "../../img/punk_medallo.jpg"
@@ -7,7 +9,9 @@ import RadioR from "../../img/radio_ruid.png"
 export default function Contact() {
     return (
         <>
-            <div className={styles.container_background}> </div>
+            <div className={styles.container_background}>
+                <ContactForm />
+            </div>
             <div className={`${styles.contenedor} ${styles.sombra}`}>
                 <h2 style={{ fontWeight: 'bold' }} >Staff</h2>
 
