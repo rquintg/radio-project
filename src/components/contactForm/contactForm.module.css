@@ -1,0 +1,81 @@
+.contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+}
+
+form {
+    max-width: 600px;
+    width: 100%;
+    background-color: rgba(7, 7, 7, 0.56);
+    padding: 20px 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 6px 6px rgba(0,0,0,0.75);
+    color: #fff;
+    margin: 25px;
+}
+
+form h2 {
+    text-align: center;
+
+}
+
+form .inputBox{
+    margin-top: 10px;
+
+}
+
+.inputBox .field {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: 1px dashed rgb(255 255 255 / 75%);
+    outline: none;
+    border-radius: 6px;
+    padding: 15px;
+    font-size: 16px;
+    color: white;
+    margin-top: 8px;
+
+}
+
+.inputBox{
+    color: #ff0000;
+}
+
+.inputBox .field::placeholder {
+    color: white;
+    opacity: 1;
+
+}
+
+.inputBox .field.mess {
+    height: 100px;
+    resize: none ;
+}
+
+.inputBox .field.mess::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+
+form button {
+    width: 100%;
+    height: 55px;
+    background: transparent;
+    border: 2px solid #d70808;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    margin-top: 25px;
+    transition: 0.5s;
+}
+
+form button:hover {
+    background: #d70808;
+}
