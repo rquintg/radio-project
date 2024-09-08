@@ -1,3 +1,5 @@
+/*Modal request*/
+
 .modal-content {
     background-color: #343a40; /* Fondo oscuro */
     color: #f8f9fa; /* Texto claro */
@@ -53,4 +55,55 @@
     margin-bottom: 5px;
     display: none;
     text-align: center;
+}
+
+/*recent tracks*/
+
+.cctrack {
+    margin-bottom: 8px !important;
+    border-bottom: 1px dashed #c8c7c7;
+}
+
+.cctrack .cccover {
+    padding: 1px;
+    background-color: transparent !important;
+    border: none !important;
+    float: left;
+    margin-right: 0 !important;
+    clear: left;
+}
+
+.cctrack .cccover img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.cctrack .cctitle {
+    color: #a40202 !important;
+    font-weight: 700;
+}
+
+.cctrack .ccnowplaying {
+    color:  red !important;
+    font-weight: 700;
+}
+
+.cctrack .ccartist {
+    color: #ffffff !important;
+    margin-bottom: 4px;
+}
+
+.cctrack .ccalbum {
+    color: #aaa7a7 !important;
+    margin-bottom: 8px !important;
+}
+
+.cctrack a.ccbuy,
+.cctrack a.ccbuy:link,
+.cctrack a.ccbuy:active,
+.cctrack a.ccbuy:visited,
+.cctrack a.ccbuy:hover {
+    display: none !important;
 }
