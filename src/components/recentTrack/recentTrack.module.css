@@ -1,16 +1,41 @@
 .container {
+    display: flex;
+    flex-direction: column;
     background-color: rgba(7, 7, 7, 0.56); /* Fondo semitransparente */
     border-radius: 8px; /* Bordes redondeados */
     box-shadow: 0px 0px 6px 6px rgba(0,0,0,0.75); /* Sombra sutil */
     padding: 10px 20px 5px; /* Espaciado interno */
-    text-align: center; /* Alineación del texto al centro */
-    width: 35vw; /* Ancho fijo para el cuadro */
-    height: auto; /* Alto automático basado en el contenido */
+    text-align: left; /* Alineación del texto al centro */
+    width: 90%; /* Ancho fijo para el cuadro */
+    max-width: 500px;
     color: white; /* Texto blanco */
 }
 
 .title {
     color: #ff0000;
-    text-align: right;
+    background-color: rgba(7, 7, 7, 0.53);
+    border-radius: 10px;
+    text-align: center;
     font-weight: bold;
+}
+
+@media (min-width: 768px) {
+    .container {
+        align-items: center;
+        justify-content: center;
+        min-width: 30vw; /* Ajuste de ancho para pantallas medianas */
+        text-align: right;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        display: block;
+        text-align: center;
+    }
+
+    .title {
+        background-color: transparent;
+        text-align: right;
+    }
 }
