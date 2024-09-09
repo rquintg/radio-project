@@ -7,6 +7,12 @@
 
 @media (min-width: 768px) {
     .cont {
+        height: 16em;
+    }
+}
+
+@media (min-width: 1024px) {
+    .cont {
         height: 15em;
     }
 }
