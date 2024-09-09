@@ -6,7 +6,7 @@
     box-shadow: 0px 0px 6px 6px rgba(0,0,0,0.75); /* Sombra sutil */
     padding: 10px 15px 5px; /* Espaciado interno */
     text-align: left; /* Alineación del texto al centro */
-    width: 95%; /* Ancho fijo para el cuadro */
+    width: 80vw; /* Ancho fijo para el cuadro */
     max-width: 500px;
     color: white; /* Texto blanco */
 }
@@ -21,11 +21,8 @@
 
 @media (min-width: 768px) {
     .container {
-        align-items: center;
-        justify-content: center;
         padding: 10px 20px 5px; /* Espaciado interno */
-        min-width: 30vw; /* Ajuste de ancho para pantallas medianas */
-        text-align: right;
+        width: 35vw; /* Ajuste de ancho para pantallas medianas */
     }
 }
 
@@ -33,6 +30,7 @@
     .container {
         display: block;
         text-align: center;
+        width: 30vw;
     }
 
     .title {

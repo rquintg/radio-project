@@ -2,5 +2,11 @@
     display: flex;
     justify-content: center;
     align-items: end;
-    height: 25vh;
+    height: 23em;
+}
+
+@media (min-width: 768px) {
+    .cont {
+        height: 15em;
+    }
 }
