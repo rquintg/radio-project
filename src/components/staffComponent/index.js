@@ -1,5 +1,5 @@
 import styles from "./staffComponent.module.css";
-import PunkM from "../../img/punk_medallo.jpg";
+import PunkM from "../../img/logo_punk_medallo.jpg";
 import PunkV from "../../img/punk_en_las_venas.png";
 import RadioR from "../../img/radio_ruid.png";
 
