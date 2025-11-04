@@ -9,7 +9,9 @@ export default function Contact() {
             <div className={styles.container_background}>
                 <ContactForm />
             </div>
-            <StaffComponent />
+            <div className={styles.contenedor_staff}>
+                <StaffComponent />
+            </div>
         </>
     );
 }

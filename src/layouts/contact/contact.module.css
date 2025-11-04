@@ -19,3 +19,15 @@
     z-index: -1; /* Coloca la superposición por debajo del contenido */
     pointer-events: none; /* Asegura que la superposición no bloquee la interacción */
 }
+
+.contenedor_staff{
+    max-width: 90rem;
+    margin: 5rem auto;
+}
+
+@media (max-width: 768px) {
+    .contenedor_staff{
+        margin: 13rem 0 auto;
+    }
+    
+}
