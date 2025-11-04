@@ -49,7 +49,7 @@ export default function NavBar() {
                                 className="btn btn-outline-danger"
                                 data-bs-toggle="modal"
                                 data-bs-target="#staticBackdrop"
-                                disabled
+
                         >Pide tu cancion
                         </button>
                     </div>
