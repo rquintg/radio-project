@@ -2,12 +2,12 @@
     display: flex;
     justify-content: center;
     align-items: end;
-    height: 23em;
+    height: 19em;
 }
 
 @media (min-width: 768px) {
     .cont {
-        height: 16em;
+        height: 23em;
     }
 }
 
