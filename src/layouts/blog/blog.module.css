@@ -17,33 +17,41 @@
   letter-spacing: 1px;
 }
 
+/* Grid para mostrar 2 columnas y 2 filas (hasta MAX_RESULTS=4) */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
 .blog-post {
   background: #232323;
   border-radius: 8px;
-  margin-bottom: 32px;
-  padding: 24px 20px;
+  padding: 20px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s, transform 0.15s;
   border: 2px solid #292929;
-  /* Separación visual entre posts */
   position: relative;
-}
-
-.blog-post:not(:last-child)::after {
-  content: '';
-  display: block;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -18px;
-  height: 2px;
-  background: linear-gradient(90deg, #a40202 0%, #232323 100%);
-  opacity: 0.5;
-  border-radius: 2px;
+  overflow: hidden;
 }
 
 .blog-post:hover {
-  box-shadow: 0 4px 16px rgba(255,0,85,0.12);
+  box-shadow: 0 6px 20px rgba(255,0,85,0.12);
+  transform: translateY(-4px);
+}
+
+.blog-post::after {
+  /* sutil separación inferior para simular tarjeta separada */
+  content: '';
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 10px;
+  height: 2px;
+  background: linear-gradient(90deg, #a40202 0%, transparent 70%);
+  opacity: 0.12;
+  border-radius: 2px;
 }
 
 .blog-post-title {
@@ -60,25 +68,31 @@
   word-break: break-word;
 }
 
+/* Imágenes responsivas dentro del contenido */
 .blog-post-content img {
   max-width: 100%;
   height: auto;
   display: block;
-  margin: 16px auto;
+  margin: 12px auto;
   border-radius: 6px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  object-fit: cover;
 }
 
-.blog-grid {
-  display: block;
-  margin-bottom: 24px;
+/* Si el post incluye una imagen destacada dentro del html, forzamos un contenedor que no rompa el layout */
+.blog-post-content > p img,
+.blog-post-content > img {
+  width: 100%;
+  height: auto;
 }
 
 @media (max-width: 900px) {
   .blog-grid {
     grid-template-columns: 1fr;
-    grid-template-rows: none;
-    gap: 24px 0;
+    gap: 20px;
+  }
+  .blog-container {
+    padding: 16px;
   }
 }
 
