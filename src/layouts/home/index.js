@@ -1,7 +1,6 @@
 import styles from "./home.module.css";
 import PunkM from "../../img/Logo-Punk-Medallo-2024 Blanco.png";
 import RecentTrack from "../../components/recentTrack";
-import PunkPlayer from "../../components/webPlayer";
 import StaffComponent from "../../components/staffComponent";
 
 export default function Home() {
@@ -15,7 +14,6 @@ export default function Home() {
                     <RecentTrack />
                 </div>
             </div>
-            <PunkPlayer/>
             <StaffComponent/>
         </>
     );
