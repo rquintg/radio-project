@@ -16,3 +16,17 @@ export const fetchBlogPosts = async (pageToken = null) => {
         nextPageToken: res.data.nextPageToken || null
     };
 }
+
+
+export const searchBlogPosts = async (query) => {
+    let url = `https://www.googleapis.com/blogger/v3/blogs/${BLOG_ID}/posts/search?key=${API_KEY}&q=${encodeURIComponent(query)}&maxResults=${MAX_RESULTS}`;
+    const res = await axios.get(url);
+
+    // Ordenar por fecha de publicación descendente
+    const items = (res.data.items || []).sort((a, b) => new Date(b.published) - new Date(a.published));
+    return {
+        items,
+        nextPageToken: res.data.nextPageToken || null
+    };
+
+}
