@@ -348,3 +348,7 @@ template {
 [hidden] {
     display: none;
 }
+
+/* Espacio para reproductor fijo al fondo */
+body { padding-bottom: 60px; }
+@media (max-width: 520px) { body { padding-bottom: 60px; } }
