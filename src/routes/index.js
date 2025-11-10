@@ -11,7 +11,7 @@ export default function MainRouter() {
     return (
         <>
             <NavBar />
-            <div style={{ paddingBottom: '90px' }}>
+            <div>
                 <Routes>
                     <Route path="/" element={<Home/>} />
                     <Route path="/blog" element={<Blog/>} />
