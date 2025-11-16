@@ -51,6 +51,7 @@
     max-width: 380px; /* mantiene el tamaño nominal en pantallas grandes */
     filter: drop-shadow(0 4px 6px rgba(164, 2, 2, 0.5));
     display: block;
+    animation: fadeInDown 0.8s ease-out;
 }
 
 .positionFooter{
@@ -63,5 +64,16 @@
 @media (max-width: 768px) {
     .container {
         margin-bottom: 40vh;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
