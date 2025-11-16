@@ -24,6 +24,9 @@ export default function NavBar() {
                                 <NavLink className="nav-link active" aria-current="page" to="/">Inicio</NavLink>
                             </li>
                             <li className="nav-item">
+                                <NavLink className="nav-link" to="/about">Acerca de</NavLink>
+                            </li>
+                            <li className="nav-item">
                                 <NavLink className="nav-link" to="/blog">Blog</NavLink>
                             </li>
                             <li className="nav-item">
