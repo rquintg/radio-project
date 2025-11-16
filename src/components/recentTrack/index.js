@@ -21,32 +21,23 @@ export default function RecentTrack() {
         const cachedTime = cachedTimeStr ? parseInt(cachedTimeStr, 10) : null;
         const cacheFresh = Boolean(cached && cachedTime && Date.now() - cachedTime < CACHE_TTL_MS);
 
+        // Mostrar cache mientras carga el nuevo contenido
         if (cacheFresh) {
-            // Usa cache fresco y no reinyecta script
+            console.info("[RecentTrack] Mostrando cache fresco mientras se recarga.");
             target.innerHTML = cached;
-            setLoading(false);
-            setError(null);
-            return () => {
-                // Limpieza mínima
-                if (target) {
-                    // Dejar contenido, no limpiar, para evitar parpadeo al desmontar
-                }
-            };
+        } else {
+            target.innerHTML = "";
         }
 
-        if (cached && !cacheFresh) {
-            console.warn("[RecentTrack] Cache expirado; recargando desde Centova.");
-        } else if (!cached) {
-            console.info("[RecentTrack] Sin cache; cargando desde Centova.");
-        }
-
-        target.innerHTML = "";
         setLoading(true);
         setError(null);
 
         // Observa cuando el script inyecte contenido en el contenedor
+        let hasContent = false;
         const observer = new MutationObserver(() => {
-            if (target && target.childNodes && target.childNodes.length > 0) {
+            if (target && target.childNodes && target.childNodes.length > 0 && !hasContent) {
+                hasContent = true;
+                console.log("[RecentTrack] Contenido detectado en contenedor");
                 setLoading(false);
                 setError(null);
                 const now = Date.now();
@@ -60,29 +51,36 @@ export default function RecentTrack() {
                 console.info("[RecentTrack] Lista reciente actualizada correctamente.");
             }
         });
-        observer.observe(target, { childList: true, subtree: true });
+        observer.observe(target, { childList: true, subtree: true, characterData: true });
 
+        // Crear timestamp único para evitar caché del navegador
         const stamp = Date.now();
+        const scriptUrl = `https://castdemo.centova.com:2199/system/recenttracks.js?nocache=${stamp}`;
+
         const script = document.createElement("script");
-        script.src = "https://castdemo.centova.com:2199/system/recenttracks.js";
+        script.src = scriptUrl;
         script.async = true;
-        script.defer = true;
         script.setAttribute("data-cc", `recenttracks-dynamic-${stamp}`);
 
+        let retryAttempts = 0;
+        const maxRetries = 2;
+
         const retryTimer = setTimeout(() => {
-            if (target && target.childNodes && target.childNodes.length === 0) {
+            if (target && target.childNodes && target.childNodes.length === 0 && retryAttempts < maxRetries && !hasContent) {
+                retryAttempts++;
                 console.warn("[RecentTrack] Reintento automático de carga de script.");
+                const retryUrl = `https://castdemo.centova.com:2199/system/recenttracks.js?nocache=${Date.now()}`;
                 const retry = document.createElement("script");
-                retry.src = "https://castdemo.centova.com:2199/system/recenttracks.js";
+                retry.src = retryUrl;
                 retry.async = true;
-                retry.defer = true;
                 retry.setAttribute("data-cc", `recenttracks-dynamic-retry-${stamp}`);
                 document.body.appendChild(retry);
             }
         }, 8000);
 
         const failTimer = setTimeout(() => {
-            if (target && target.childNodes && target.childNodes.length === 0 && !sessionStorage.getItem(CACHE_KEY_HTML)) {
+            if (target && target.childNodes && target.childNodes.length === 0 && !hasContent) {
+                observer.disconnect();
                 setLoading(false);
                 setError("No se pudo cargar la lista reciente. Intenta de nuevo.");
                 console.warn("[RecentTrack] Timeout de carga; mostrando mensaje de error.");
@@ -95,12 +93,16 @@ export default function RecentTrack() {
             observer.disconnect();
             clearTimeout(retryTimer);
             clearTimeout(failTimer);
+            // Limpiar scripts inyectados
             document
                 .querySelectorAll('script[data-cc^="recenttracks-dynamic-"]')
-                .forEach((s) => s.parentNode && s.parentNode.removeChild(s));
-            if (target && loading) target.innerHTML = "";
+                .forEach((s) => {
+                    if (s && s.parentNode) {
+                        s.parentNode.removeChild(s);
+                    }
+                });
         };
-    }, [attempt, loading]);
+    }, [attempt]);
 
     const handleRetry = () => {
         setError(null);
