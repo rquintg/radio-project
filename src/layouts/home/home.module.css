@@ -8,7 +8,7 @@
     align-items: flex-start;
     justify-content: center;
     margin-bottom: 25vh;
-    height: 50vh;
+    height: 35vh;
     width: 100vw;
     color: white;
     z-index: 1; /* Asegura que el contenido esté sobre el pseudo-elemento */
@@ -64,6 +64,13 @@
 @media (max-width: 768px) {
     .container {
         margin-bottom: 40vh;
+    }
+}
+
+@media(min-width: 1200px) {
+    .container {
+        height: 45vh;
+        margin-bottom: 27vh;
     }
 }
 

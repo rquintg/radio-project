@@ -9,7 +9,7 @@ export default function RecentTrack() {
         <iframe
           src="https://lsdradiohostserver.com/public/punk_hc/history?theme=dark"
           frameBorder="0"
-          allowTransparency="true"
+          allowtransparency="true"
           title="Historial de canciones"
           className={styles.historyFrame}
         />
