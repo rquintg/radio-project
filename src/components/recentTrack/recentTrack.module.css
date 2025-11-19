@@ -1,39 +1,62 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    background-color: rgba(7, 7, 7, 0.56); /* Fondo semitransparente */
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0px 0px 6px 6px rgba(0,0,0,0.75); /* Sombra sutil */
-    padding: 10px 15px 5px; /* Espaciado interno */
-    text-align: left; /* Alineación del texto al centro */
-    width: 80vw; /* Ancho fijo para el cuadro */
-    max-width: 500px;
-    color: white; /* Texto blanco */
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(7, 7, 7, 0.56); /* Fondo semitransparente */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0px 0px 6px 6px rgba(0, 0, 0, 0.75); /* Sombra sutil */
+  padding: 10px 15px 5px; /* Espaciado interno */
+  text-align: left; /* Alineación del texto al centro */
+  width: 80vw; /* Ancho fijo para el cuadro */
+  max-width: 500px;
+  color: white; /* Texto blanco */
 }
 
 .title {
-    color: #ff0000;
-    background-color: rgba(7, 7, 7, 0.53);
-    border-radius: 10px;
-    text-align: center;
-    font-weight: bold;
+  color: #ff0000;
+  background-color: rgba(7, 7, 7, 0.53);
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.iframeWrapper {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.historyFrame {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 6px;
 }
 
 @media (min-width: 768px) {
-    .container {
-        padding: 10px 20px 5px; /* Espaciado interno */
-    }
+  .container {
+    padding: 10px 20px 5px; /* Espaciado interno */
+  }
+
+  .historyFrame {
+    height: 350px;
+  }
 }
 
 @media (min-width: 1024px) {
-    .container {
-        display: block;
-        text-align: center;
-        width: 30vw;
-    }
+  .container {
+    display: block;
+    text-align: center;
+    width: 30vw;
+  }
 
-    .title {
-        background-color: transparent;
-        text-align: right;
-    }
+  .title {
+    background-color: transparent;
+    text-align: right;
+    margin-bottom: 12px;
+  }
+
+  .historyFrame {
+    height: 400px;
+  }
 }
