@@ -15,6 +15,7 @@ a{
 .contenedor{
     max-width: 90rem;
     margin: 2.5rem auto;
+    color: var(--blanco)
 
     /* 0 auto 0 auto */
     /* 0auto */
