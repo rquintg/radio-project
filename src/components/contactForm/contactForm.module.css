@@ -5,7 +5,7 @@
     min-height: 50vh;
 }
 
-form {
+.contactForm {
     max-width: 600px;
     width: 100%;
     background-color: rgba(7, 7, 7, 0.56);
@@ -16,12 +16,12 @@ form {
     margin: 25px;
 }
 
-form h2 {
+.contactForm h2 {
     text-align: center;
 
 }
 
-form .inputBox{
+.contactForm .inputBox{
     margin-top: 10px;
 
 }
@@ -61,7 +61,7 @@ form .inputBox{
 }
 
 
-form button {
+.contactForm button {
     width: 100%;
     height: 55px;
     background: transparent;
@@ -76,6 +76,6 @@ form button {
     transition: 0.5s;
 }
 
-form button:hover {
+.contactForm button:hover {
     background: #d70808;
 }

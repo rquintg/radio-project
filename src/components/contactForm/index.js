@@ -35,7 +35,7 @@ export default function ContactForm() {
     return (
         <>
             <div className={styles.contact}>
-                <form onSubmit={onSubmit}>
+                <form className={styles.contactForm} onSubmit={onSubmit}>
                     <h2>Contacto</h2>
                     <div className={styles.inputBox}>
                         <label>Nombre</label>
