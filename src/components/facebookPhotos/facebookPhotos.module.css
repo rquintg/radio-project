@@ -355,7 +355,11 @@
 
 .paginationBtn {
   color: #ffffff;
-  background: linear-gradient(135deg, rgba(164, 2, 2, 0.8) 0%, rgba(139, 0, 0, 0.8) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(164, 2, 2, 0.8) 0%,
+    rgba(139, 0, 0, 0.8) 100%
+  );
   border: 1.5px solid rgba(164, 2, 2, 0.6);
   padding: 11px 24px;
   border-radius: 50px;
