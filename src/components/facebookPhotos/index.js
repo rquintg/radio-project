@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import SpinnerLoading from "../util/spinnerLoader";
+
 import styles from "./facebookPhotos.module.css";
 
 export default function FacebookPhotos() {
@@ -101,7 +103,12 @@ export default function FacebookPhotos() {
     }
   };
 
-  if (loading) return <div className={styles.loading}>Cargando...</div>;
+  if (loading)
+    return (
+      <div className={styles.loading}>
+        <SpinnerLoading />
+      </div>
+    );
   if (error) return <div className={styles.error}>{error}</div>;
   if (photos.length === 0)
     return <div className={styles.loading}>No se encontraron fotos.</div>;
