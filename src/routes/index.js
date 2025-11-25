@@ -1,4 +1,4 @@
-import { Routes, Route} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import NavBar from "../layouts/navBar";
 import Home from "../layouts/home";
@@ -9,21 +9,20 @@ import WebPlayer from "../components/webPlayer";
 import FacebookPhotos from "../components/facebookPhotos";
 
 export default function MainRouter() {
-    return (
-        <>
-            <NavBar />
-            <div>
-                <Routes>
-                    <Route path="/" element={<Home/>} />
-                    <Route path="/blog" element={<Blog/>} />
-                    <Route path="/contact" element={<Contact/>} />
-                    <Route path="/about" element={<About/>} />
-                    <Route path="/facebook-photos" element={<FacebookPhotos/>} />
-                </Routes>
-            </div>
-            {/* Reproductor persistente (no se desmonta al cambiar de ruta) */}
-            <WebPlayer />
-        </>
-
-    );
+  return (
+    <>
+      <NavBar />
+      <div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/fotos" element={<FacebookPhotos />} />
+        </Routes>
+      </div>
+      {/* Reproductor persistente (no se desmonta al cambiar de ruta) */}
+      <WebPlayer />
+    </>
+  );
 }
