@@ -341,3 +341,108 @@
     font-size: 1rem;
   }
 }
+
+/* Paginación */
+.paginationContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.paginationBtn {
+  color: #ffffff;
+  background: linear-gradient(135deg, rgba(164, 2, 2, 0.8) 0%, rgba(139, 0, 0, 0.8) 100%);
+  border: 1.5px solid rgba(164, 2, 2, 0.6);
+  padding: 11px 24px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 8px 20px rgba(164, 2, 2, 0.35);
+  display: inline-block;
+}
+
+.paginationBtn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #ff3b3b 0%, #a40202 100%);
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 12px 32px rgba(164, 2, 2, 0.5);
+  transform: translateY(-3px) scale(1.05);
+}
+
+.paginationBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.pageInfo {
+  color: #a40202;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Responsive - Tablets */
+@media (max-width: 1024px) {
+  .paginationContainer {
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+  }
+
+  .paginationBtn {
+    padding: 10px 18px;
+    font-size: 0.85rem;
+  }
+
+  .pageInfo {
+    font-size: 0.95rem;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .paginationContainer {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+  }
+
+  .paginationBtn {
+    width: 100%;
+    padding: 9px 16px;
+    font-size: 0.8rem;
+  }
+
+  .pageInfo {
+    font-size: 0.9rem;
+  }
+}
+
+/* Responsive - Small Mobile */
+@media (max-width: 480px) {
+  .paginationContainer {
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+  }
+
+  .paginationBtn {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 0.75rem;
+  }
+
+  .pageInfo {
+    font-size: 0.8rem;
+  }
+}

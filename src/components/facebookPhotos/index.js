@@ -6,6 +6,8 @@ export default function FacebookPhotos() {
   const [photos, setPhotos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const photosPerPage = 6;
 
   const PAGE_ID = process.env.REACT_APP_FACEBOOK_PAGE_ID;
   const ACCESS_TOKEN = process.env.REACT_APP_FACEBOOK_ACCESS_TOKEN;
@@ -63,10 +65,10 @@ export default function FacebookPhotos() {
           return false; // Skip if no attachment info to be safe
         });
 
-        // Slice to get the desired number of items (e.g., 8)
         console.log(postsWithPhotos);
 
-        setPhotos(postsWithPhotos.slice(0, 100));
+        setPhotos(postsWithPhotos);
+        setCurrentPage(1);
         setLoading(false);
       } catch (err) {
         console.error("Error fetching Facebook posts:", err);
@@ -78,6 +80,27 @@ export default function FacebookPhotos() {
     fetchPhotos();
   }, [PAGE_ID, ACCESS_TOKEN]);
 
+  // Calcular índices para paginación
+  const indexOfLastPhoto = currentPage * photosPerPage;
+  const indexOfFirstPhoto = indexOfLastPhoto - photosPerPage;
+  const currentPhotos = photos.slice(indexOfFirstPhoto, indexOfLastPhoto);
+  const totalPages = Math.ceil(photos.length / photosPerPage);
+
+  // Funciones de navegación
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
+  const handlePrevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   if (loading) return <div className={styles.loading}>Cargando...</div>;
   if (error) return <div className={styles.error}>{error}</div>;
   if (photos.length === 0)
@@ -87,7 +110,7 @@ export default function FacebookPhotos() {
     <div className={styles.container}>
       <h2 className={styles.title}>Registro Fotográfico</h2>
       <div className={styles.grid}>
-        {photos.map((photo) => (
+        {currentPhotos.map((photo) => (
           <div key={photo.id} className={styles.card}>
             <img
               src={photo.full_picture}
@@ -105,6 +128,29 @@ export default function FacebookPhotos() {
             </a>
           </div>
         ))}
+      </div>
+
+      {/* Controles de Paginación */}
+      <div className={styles.paginationContainer}>
+        <button
+          className={styles.paginationBtn}
+          onClick={handlePrevPage}
+          disabled={currentPage === 1}
+        >
+          ← Anterior
+        </button>
+
+        <span className={styles.pageInfo}>
+          Página {currentPage} de {totalPages}
+        </span>
+
+        <button
+          className={styles.paginationBtn}
+          onClick={handleNextPage}
+          disabled={currentPage === totalPages}
+        >
+          Siguiente →
+        </button>
       </div>
     </div>
   );
