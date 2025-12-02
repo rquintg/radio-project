@@ -12,15 +12,13 @@ export default function MainRouter() {
   return (
     <>
       <NavBar />
-      <div>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/fotos" element={<FacebookPhotos />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/fotos" element={<FacebookPhotos />} />
+      </Routes>
       {/* Reproductor persistente (no se desmonta al cambiar de ruta) */}
       <WebPlayer />
     </>

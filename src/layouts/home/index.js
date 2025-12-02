@@ -6,12 +6,14 @@ import StaffComponent from "../../components/staffComponent";
 export default function Home() {
     return (
         <>
-            <div className={styles.container}>
-                <div className={styles.modal}>
-                    <img src={PunkM} width="380px" alt="punk medallo"/>
-                </div>
-                <div className={styles.recentTrackWrapper}>
-                    <RecentTrack />
+            <div className={styles.homeSection}>
+                <div className={styles.container}>
+                    <div className={styles.modal}>
+                        <img src={PunkM} width="380px" alt="punk medallo"/>
+                    </div>
+                    <div className={styles.recentTrackWrapper}>
+                        <RecentTrack />
+                    </div>
                 </div>
             </div>
             <StaffComponent/>

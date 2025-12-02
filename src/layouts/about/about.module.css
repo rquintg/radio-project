@@ -22,6 +22,7 @@
     width: 100vw;
     color: white;
     z-index: 1; /* Asegura que el contenido esté sobre el pseudo-elemento */
+    margin-top: 80px;
 }
 
 .heroSection::before {
