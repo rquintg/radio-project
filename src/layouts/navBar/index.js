@@ -72,6 +72,7 @@ export default function NavBar() {
               </li>
             </ul>
             <button
+              disabled
               type="button"
               className="btn btn-outline-danger"
               data-bs-toggle="modal"

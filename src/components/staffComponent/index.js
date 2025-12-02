@@ -38,7 +38,7 @@ export  default function staffComponent (){
                     </div>
 
                     <div className={styles.servicio}>
-                        <h3>Auspiciado por</h3>
+                        <h3>Auspiciado Por</h3>
 
                         <div className={styles.iconos}>
                             <img src={RadioR} alt="radio ruidosa"/>
