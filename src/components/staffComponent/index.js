@@ -1,7 +1,7 @@
 import styles from "./staffComponent.module.css";
 import PunkM from "../../img/logo_punk_medallo.jpg";
 import PunkV from "../../img/punk_en_las_venas.png";
-import RadioR from "../../img/radio_ruid.png";
+import RadioR from "../../img/lsdradio.jpeg";
 
 export  default function staffComponent (){
     return(
@@ -10,6 +10,19 @@ export  default function staffComponent (){
                 <h2 style={{fontWeight: 'bold'}}>Staff</h2>
 
                 <div className={styles.servicios}>
+
+                    <div className={styles.servicio}>
+
+                        <a href="https://www.facebook.com/punkenlasvenas1" target="_blank" rel="noopener noreferrer">
+                            <h3>Punk en las Venas</h3>
+                            <div className={styles.iconos}>
+                                <img src={PunkV} alt="punk_en_las_venas"/>
+                            </div>
+                        </a>
+
+                        <p>Apoyando la escena punk nacional colombiana </p>
+                    </div>
+
                     <div className={styles.servicio}>
 
                         <a href="https://www.facebook.com/xPUNKMEDALLOx" target="_blank" rel="noopener noreferrer">
@@ -25,26 +38,13 @@ export  default function staffComponent (){
                     </div>
 
                     <div className={styles.servicio}>
-
-                        <a href="https://www.facebook.com/punkenlasvenas1" target="_blank" rel="noopener noreferrer">
-                            <h3>Punk en las Venas</h3>
-                            <div className={styles.iconos}>
-                                <img src={PunkV} alt="punk_en_las_venas"/>
-                            </div>
-                        </a>
-
-                        <p>Proyecto que comenzó desde el año 2008, apoyando la escena punk nacional colombiana </p>
-                    </div>
-
-                    <div className={styles.servicio}>
-                        <h3>Radio Ruidosa</h3>
+                        <h3>Auspiciado por</h3>
 
                         <div className={styles.iconos}>
                             <img src={RadioR} alt="radio ruidosa"/>
                         </div>
 
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti tempore,
-                            nam asperiores.</p>
+                        <p>Escucha, apoya y difunde.</p>
                     </div>
                 </div>
             </div>
