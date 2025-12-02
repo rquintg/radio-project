@@ -78,7 +78,7 @@ export default function Footer() {
           © {ahora.getFullYear()} Punk Medallo - Todos los derechos reservados
         </p>
         <p className={styles.credit}>
-          Desarrollado por <strong>Ricardo Quintero</strong> | Actualizado en{" "}
+          Desarrollado por <strong>Ricardo Q</strong> | Actualizado en{" "}
           {mesYanio}
         </p>
       </div>
