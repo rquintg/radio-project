@@ -6,7 +6,7 @@
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     height: 50vh;
     z-index: 1; /* Asegura que el contenido esté sobre el pseudo-elemento */
-    margin-top: 80px;
+    padding-top: 80px;
 }
 
 .container_background::before {
