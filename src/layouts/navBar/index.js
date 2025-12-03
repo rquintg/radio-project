@@ -65,11 +65,11 @@ export default function NavBar() {
                                 </ul>
                             </li> */}
               <div className="vr bg-light"></div>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <a className="nav-link disabled" href="/" aria-disabled="true">
                   En Construcion
                 </a>
-              </li>
+              </li> */}
             </ul>
             <button
               disabled
@@ -78,7 +78,7 @@ export default function NavBar() {
               data-bs-toggle="modal"
               data-bs-target="#staticBackdrop"
             >
-              Pide tu cancion
+              En Construcion
             </button>
           </div>
         </div>
