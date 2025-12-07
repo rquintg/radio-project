@@ -17,7 +17,7 @@ export default function Blog() {
 
     return (
         <div className={styles['blog-container']}>
-            <h2 className={styles['blog-title']}>Entradas del blog</h2>
+            <h2 className={styles['blog-title']}>Descargar Musica</h2>
             {loading && <div style={{textAlign: 'center', margin: '20px'}}>
                 <SpinnerLoader/>
             </div>}
