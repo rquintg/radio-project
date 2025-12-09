@@ -90,7 +90,7 @@ export default function NavBar() {
               </ul>
               <div className={`vr ${styles.divider}`}></div>
               <li className="nav-item" style={{ listStyle: "none" }}>
-                <span className={`nav-link ${styles.navLink}`} style={{ cursor: "default" }}>
+                <span className={`${styles.construccion}`}>
                   En Construcción
                 </span>
               </li>
