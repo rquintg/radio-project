@@ -6,8 +6,8 @@
   width: 100%;
   z-index: 1000;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  backdrop-filter: none;
-  background: transparent;
+  backdrop-filter: blur(10px);
+  background: linear-gradient(135deg, rgba(20, 20, 20, 0.85) 0%, rgba(40, 0, 0, 0.75) 100%);
 }
 
 .navContainer.scrolled {
@@ -180,6 +180,11 @@
 
   .navbar-collapse.show {
     padding: 1rem 0;
+    text-align: right !important;
+  }
+
+  .navbar-nav {
+    justify-content: flex-end !important;
   }
 }
 
@@ -199,6 +204,18 @@
 
   .navBar {
     padding: 0.75rem 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navContainer {
+    background: transparent;
+    backdrop-filter: none;
+  }
+
+  .navContainer.scrolled {
+    backdrop-filter: blur(10px);
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.85) 0%, rgba(40, 0, 0, 0.75) 100%);
   }
 }
 
