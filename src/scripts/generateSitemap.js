@@ -28,7 +28,7 @@ const generateSitemap = () => {
 ${urls}
 </urlset>`;
 
-  const outputPath = path.join(__dirname, '../public/sitemap.xml');
+  const outputPath = path.join(__dirname, '../../public/sitemap.xml');
   fs.writeFileSync(outputPath, sitemap);
   console.log('✓ Sitemap generado en:', outputPath);
 };
