@@ -1,17 +1,25 @@
+.homeSection {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
 .container {
-    position: relative; /* Necesario para la superposición */
+    position: relative;
     background-image: url("../../img/fondo.jpeg");
-    background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
-    background-position: center; /* Centra la imagen en el contenedor */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     align-items: flex-start;
     justify-content: center;
     margin-bottom: 25vh;
-    height: 35vh;
+    height: 44vh;
     width: 100vw;
     color: white;
-    z-index: 1; /* Asegura que el contenido esté sobre el pseudo-elemento */
+    z-index: 1;
+    margin-left: calc(-50vw + 50%);
+    padding-top: 80px;
 }
 
 .container::before {
@@ -28,10 +36,7 @@
 
 .recentTrackWrapper {
     position: absolute;
-    top: 20vh;
-
-    height: 50vh; /* Ajusta según el tamaño deseado */
-    color: black;
+    top: 40vh;
 }
 
 .modal{
@@ -46,9 +51,9 @@
 }
 
 .modal img {
-    width: 70%;
+    width: 90%;
     height: auto;
-    max-width: 380px; /* mantiene el tamaño nominal en pantallas grandes */
+    max-width: 450px; /* mantiene el tamaño nominal en pantallas grandes */
     filter: drop-shadow(0 4px 6px rgba(164, 2, 2, 0.5));
     display: block;
     animation: fadeInDown 0.8s ease-out;
@@ -65,13 +70,22 @@
     .container {
         margin-bottom: 40vh;
     }
+
+    .modal img {
+        width: 100%;
+        max-width: none;
+    }
 }
 
 @media(min-width: 1200px) {
     .container {
-        height: 45vh;
-        margin-bottom: 27vh;
+        height: 58vh;
+        margin-bottom: 16vh;
     }
+    .recentTrackWrapper {
+    position: absolute;
+    top: 33vh;
+}
 }
 
 @keyframes fadeInDown {

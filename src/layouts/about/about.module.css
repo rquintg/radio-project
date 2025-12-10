@@ -18,10 +18,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50vh;
+    height: 58vh;
     width: 100vw;
     color: white;
     z-index: 1; /* Asegura que el contenido esté sobre el pseudo-elemento */
+    padding-top: 80px;
 }
 
 .heroSection::before {
@@ -354,10 +355,6 @@
 @media (max-width: 480px) {
   .heroSection {
     min-height: 40vh;
-  }
-
-  .heroLogo {
-    /* width: 150px; */
   }
 
   .heroTitle {

@@ -30,7 +30,7 @@
 
 .historyFrame {
   width: 100%;
-  height: 300px;
+  height: 230px;
   border: none;
   border-radius: 6px;
 }
@@ -41,7 +41,7 @@
   }
 
   .historyFrame {
-    height: 350px;
+    height: 318px;
   }
 }
 
@@ -57,9 +57,5 @@
     background-color: transparent;
     text-align: right;
     margin-bottom: 12px;
-  }
-
-  .historyFrame {
-    height: 400px;
   }
 }
