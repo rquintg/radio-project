@@ -84,7 +84,7 @@
 
 @media (max-width: 680px) {
   /* Ya es fixed por defecto; aquí solo afinamos layout */
-  .cont { justify-content: space-between; }
+  .cont { justify-content: space-around; }
   .slider { width: 70px; }
 }
 
