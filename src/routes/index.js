@@ -12,7 +12,6 @@ export default function MainRouter() {
   return (
     <>
       <NavBar />
-      <div>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/descargas" element={<Descargas />} />
@@ -20,7 +19,6 @@ export default function MainRouter() {
           <Route path="/about" element={<About />} />
           <Route path="/fotos" element={<FacebookPhotos />} />
         </Routes>
-      </div>
       {/* Reproductor persistente (no se desmonta al cambiar de ruta) */}
       <WebPlayer />
     </>
