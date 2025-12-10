@@ -62,9 +62,9 @@ export default function NavBar() {
                     className={({ isActive }) =>
                       `nav-link ${styles.navLink} ${isActive ? styles.active : ""}`
                     }
-                    to="/blog"
+                    to="/descargas"
                   >
-                    Blog
+                    Descargas
                   </NavLink>
                 </li>
                 <li className="nav-item">
