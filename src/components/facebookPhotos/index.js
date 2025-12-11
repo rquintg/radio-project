@@ -133,6 +133,9 @@ export default function FacebookPhotos() {
             >
               <span className={styles.viewButton}>Ver en Facebook</span>
             </a>
+            {photo.message && (
+              <div className={styles.message}>{photo.message}</div>
+            )}
           </div>
         ))}
       </div>
