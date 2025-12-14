@@ -91,7 +91,7 @@ export default function NavBar() {
               <div className={`vr ${styles.divider}`}></div>
               <li className="nav-item" style={{ listStyle: "none" }}>
                 <span className={`${styles.construccion}`}>
-                  En Construcción
+                  .
                 </span>
               </li>
               {/* <button
