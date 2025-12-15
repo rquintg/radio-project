@@ -29,6 +29,7 @@
 }
 
 .historyFrame {
+  pointer-events: none; /* Desactiva la interacción del usuario */
   width: 100%;
   height: 230px;
   border: none;

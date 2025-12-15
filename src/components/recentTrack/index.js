@@ -22,6 +22,10 @@ export default function RecentTrack() {
           title="Historial de canciones"
           className={styles.historyFrame}
           onLoad={handleLoad}
+          allowFullScreen={false}
+          loading="lazy"
+          referrerPolicy="no-referrer"
+          sandbox="allow-same-origin allow-scripts"
         />
       </div>
     </div>
