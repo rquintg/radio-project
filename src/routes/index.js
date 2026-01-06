@@ -6,7 +6,7 @@ import About from "../layouts/about";
 import Contact from "../layouts/contact";
 import Descargas from "../layouts/blog";
 import WebPlayer from "../components/webPlayer";
-import FacebookPhotos from "../components/facebookPhotos";
+import FacebookPhotos from "../layouts/facebookPhotos";
 
 export default function MainRouter() {
   return (

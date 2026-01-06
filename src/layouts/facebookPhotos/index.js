@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import SpinnerLoading from "../util/spinnerLoader";
+import { fetchFacebookPhotos } from "../../util/axiosFacebook";
+import SpinnerLoading from "../../components/util/spinnerLoader";
 
 import styles from "./facebookPhotos.module.css";
 
@@ -15,7 +16,7 @@ export default function FacebookPhotos() {
   const ACCESS_TOKEN = process.env.REACT_APP_FACEBOOK_ACCESS_TOKEN;
 
   useEffect(() => {
-    const fetchPhotos = async () => {
+    const fetchPhotos = async () =>   {
       if (!PAGE_ID || !ACCESS_TOKEN) {
         setError(
           "Facebook configuration is missing (Page ID or Access Token)."
