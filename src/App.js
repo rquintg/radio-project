@@ -1,7 +1,7 @@
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { FloatingWhatsApp } from 'react-floating-whatsapp';
 import MainRouter from "./routes";
-import Footer from "./layouts/footer";
+import Footer from "./components/footer";
 
 import avatar from '../src/img/logo_punk_medallo.jpg';
 import './App.css';

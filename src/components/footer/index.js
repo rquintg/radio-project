@@ -22,7 +22,7 @@ export default function Footer() {
           <h4 className={styles.footerSubtitle}>Enlaces</h4>
           <ul className={styles.footerLinks}>
             <li>
-              <a href="/">Inicio</a>
+              <a href="/public">Inicio</a>
             </li>
             <li>
               <a href="/about">Acerca de</a>
