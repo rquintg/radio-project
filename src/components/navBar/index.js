@@ -20,7 +20,7 @@ export default function NavBar() {
       <nav className={`${styles.navContainer} ${isScrolled ? styles.scrolled : ""}`}>
         <div className={`navbar ${styles.navBar} navbar-expand-md navbar-dark`}>
           <div className="container">
-            <NavLink className={`navbar-brand ${styles.navBrand}`} to="/public">
+            <NavLink className={`navbar-brand ${styles.navBrand}`} to="/">
               <i className={`bi bi-broadcast ${styles.brandIcon}`}></i>
             </NavLink>
             <button
@@ -42,7 +42,7 @@ export default function NavBar() {
                       `nav-link ${styles.navLink} ${isActive ? styles.active : ""}`
                     }
                     aria-current="page"
-                    to="/public"
+                    to="/"
                   >
                     Inicio
                   </NavLink>
