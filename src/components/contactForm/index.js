@@ -1,5 +1,4 @@
 import styles from "./contactForm.module.css";
-import Swal from 'sweetalert2'
 import {sileo} from "sileo";
 
 export default function ContactForm() {
@@ -24,13 +23,6 @@ export default function ContactForm() {
             }).then((res) => res.json());
 
             if (res.success) {
-                /*Swal.fire({
-                    title: "Exito!",
-                    text: "Tu mensaje ha sido enviado!",
-                    icon: "success",
-                    background: '#19191a',
-                    color: '#fff'
-                });*/
 
                 sileo.success({
                     title: "¡Éxito!",
