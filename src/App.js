@@ -1,6 +1,6 @@
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { FloatingWhatsApp } from 'react-floating-whatsapp';
-import {sileo, Toaster} from "sileo";
+import {Toaster} from "sileo";
 import MainRouter from "./routes";
 import Footer from "./components/footer";
 
