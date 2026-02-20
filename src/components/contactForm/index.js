@@ -1,5 +1,6 @@
 import styles from "./contactForm.module.css";
 import Swal from 'sweetalert2'
+import {sileo} from "sileo";
 
 export default function ContactForm() {
 
@@ -12,23 +13,41 @@ export default function ContactForm() {
         const object = Object.fromEntries(formData);
         const json = JSON.stringify(object);
 
-        const res = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json"
-            },
-            body: json
-        }).then((res) => res.json());
+        try{
+            const res = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json"
+                },
+                body: json
+            }).then((res) => res.json());
 
-        if (res.success) {
-            Swal.fire({
-                title: "Exito!",
-                text: "Tu mensaje ha sido enviado!",
-                icon: "success",
-                background: '#19191a',
-                color: '#fff'
-            });
+            if (res.success) {
+                /*Swal.fire({
+                    title: "Exito!",
+                    text: "Tu mensaje ha sido enviado!",
+                    icon: "success",
+                    background: '#19191a',
+                    color: '#fff'
+                });*/
+
+                sileo.success({
+                    title: "¡Éxito!",
+                    description: "Tu mensaje ha sido enviado correctamente. ¡Gracias por contactarnos!",
+                });
+                event.target.reset();
+            } else {
+                sileo.error({
+                    title: "Error",
+                    description: "Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.",
+                })
+            }
+        } catch (error){
+            sileo.error({
+                title: "Error",
+                description: "Hubo un problema al conectar con el servidor.",
+            })
         }
     };
 
