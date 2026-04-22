@@ -173,8 +173,7 @@
   }
 
   .btnRequestSong {
-    width: 100%;
-    margin-top: 1rem;
+    display: none;
   }
 
   .navBrand {
@@ -213,7 +212,7 @@
   }
 
   .navBar {
-    padding: 0.75rem 0;
+    padding: 0.20rem 0;
   }
 }
 

@@ -1,10 +1,13 @@
 import SongRequest from "../songRequest";
-import { NavLink } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
+import { Collapse } from "bootstrap";
 import styles from "./navBar.module.css";
 
 export default function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const collapseRef = useRef(null);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +17,16 @@ export default function NavBar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Cerrar el menú colapsado cuando cambia la ruta (móviles)
+  useEffect(() => {
+    if (collapseRef.current) {
+      const collapse = Collapse.getInstance(collapseRef.current);
+      if (collapse) {
+        collapse.hide();
+      }
+    }
+  }, [location]);
 
   return (
     <>
@@ -34,7 +47,7 @@ export default function NavBar() {
             >
               <span className={`navbar-toggler-icon ${styles.togglerIcon}`}></span>
             </button>
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <div className="collapse navbar-collapse" id="navbarSupportedContent" ref={collapseRef}>
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
                   <NavLink
@@ -90,18 +103,18 @@ export default function NavBar() {
               </ul>
               <div className={`vr ${styles.divider}`}></div>
               <li className="nav-item" style={{ listStyle: "none" }}>
-                <span className={`${styles.construccion}`}>
+                {/*<span className={`${styles.construccion}`}>
                   .
-                </span>
+                </span>*/}
               </li>
-              {/* <button
+               <button
                 type="button"
                 className={`btn ${styles.btnRequestSong}`}
                 data-bs-toggle="modal"
                 data-bs-target="#staticBackdrop"
               >
                 Pide tu canción
-              </button> */}
+              </button>
             </div>
           </div>
         </div>
