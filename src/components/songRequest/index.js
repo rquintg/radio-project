@@ -1,29 +1,10 @@
-import {useEffect} from 'react';
-
 import '../../util/css/util.css';
 import './songRequest.css';
 
 export default function SongRequest() {
-
-    useEffect(() => {
-        const resultDiv = document.querySelector('[data-type="result"]');
-
-        const observer = new MutationObserver((mutations) => {
-            mutations.forEach((mutation) => {
-                if (mutation.type === 'childList' && mutation.target.textContent.includes('Your song request has been submitted')) {
-                    mutation.target.textContent = 'Tu solicitud de canción ha sido enviada - ¡gracias!';
-                } else if (mutation.type === 'childList' && mutation.target.textContent.includes('Sorry, your song request could not be submitted at this time.')) {
-                    mutation.target.textContent = 'Lo siento, tu solicitud de canción no pudo ser enviada en este momento.';
-                }
-            });
-        });
-
-        observer.observe(resultDiv, {childList: true});
-
-        return () => {
-            observer.disconnect();
-        };
-    }, []);
+    // URL del widget de solicitud de canciones de AzuraCast
+    // El widget es responsable de manejar todo el formulario y la lógica de envío
+    const azuraCastWidgetUrl = 'https://a3.asurahosting.com/public/punk_medallo/embed-requests?theme=dark';
 
     return (
         <>
@@ -33,38 +14,22 @@ export default function SongRequest() {
                 <div className="modal-dialog modal-lg modal-dialog-centered">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h1 className="modal-title fs-5" id="staticBackdropLabel">Solicitar Cancion</h1>
+                            <h6 className="modal-title fs-6 " id="staticBackdropLabel">Solo puedes solicitar una cancion cada 5 minutos</h6> <i className="bi bi-arrow-left-short" style={{color: 'red'}}></i>
                             <button type="button" className="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                         </div>
-                        <div className="modal-body">
-                            <div className="d-flex justify-content-center align-items-center" style={{minHeight: '100%'}}>
-                                <form className="cc_request_form  cc_request_f" data-username="demo">
-                                    <div data-type="result"></div>
-
-                                    Banda: <i className="bi bi-arrow-left-short" style={{color: 'red'}}></i>
-                                    <input type="text" name="request[artist]" size="40" maxLength="127"/>
-                                    <br/>
-                                    Cancion:<i className="bi bi-arrow-left-short" style={{color: 'red'}}></i>
-                                    <input type="text" name="request[title]" size="40" maxLength="127"/>
-                                    <br/>
-                                    Correo:<i className="bi bi-arrow-left-short" style={{color: 'red'}}></i>
-                                    <input type="text" name="request[email]" size="40" maxLength="127"/>
-                                    <br/>
-                                    Dedicado a: <input type="text" name="request[dedication]" size="40" maxLength="127"/>
-                                    <br/>
-                                    Tu nombre: <input type="text" name="request[sender]" size="40" maxLength="127"/>
-                                    <br/>
-                                    <input type="button" value="Solicitar" data-type="submit"/>
-                                    <br/>
-                                </form>
-                        </div>
-                        </div>
-                        <div className="modal-footer">
-                            <div
-                                className="p-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
-                                Los campos con <i className="bi bi-arrow-left-short" style={{color: 'red'}}></i> son obligatorios
-                            </div>
+                        <div className="modal-body" style={{padding: 0}}>
+                            {/* Widget de AzuraCast para solicitud de canciones */}
+                            <iframe
+                                src={azuraCastWidgetUrl}
+                                frameBorder="0"
+                                style={{
+                                    width: '100%',
+                                    minHeight: '600px',
+                                    border: '0'
+                                }}
+                                title="AzuraCast Song Request Widget"
+                            ></iframe>
                         </div>
                     </div>
                 </div>

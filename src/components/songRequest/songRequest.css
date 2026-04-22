@@ -1,53 +1,30 @@
+/* Estilos del contenido del modal - Diseño transparente similar a recentTrack */
 .modal-content {
-    background-color: #343a40; /* Fondo oscuro */
+    background-color: rgba(7, 7, 7, 0.56); /* Fondo semitransparente similar a recentTrack */
     color: #f8f9fa; /* Texto claro */
     border: none;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0px 0px 6px 6px rgba(0, 0, 0, 0.75); /* Sombra sutil similar a recentTrack */
 }
 
+/* Estilos del encabezado del modal */
 .modal-header {
-    border-bottom: 1px solid #495057; /* Línea de separación tenue */
+    border-bottom: 1px solid rgba(149, 157, 165, 0.2); /* Línea de separación tenue y transparente */
+    background-color: rgba(7, 7, 7, 0.3); /* Fondo ligeramente más oscuro */
+    border-radius: 8px 8px 0px 0px; /* Bordes redondeados solo en la parte superior */
 }
 
 .modal-title {
     color: #f8f9fa; /* Texto claro */
+    font-weight: bold;
 }
 
+/* Estilos del botón de cierre */
 .btn-close {
     filter: invert(1); /* Invertir colores del botón de cierre para modo oscuro */
+    opacity: 0.8;
 }
 
-.cc_request_f input[type="text"] {
-    background-color: #495057; /* Fondo oscuro para inputs */
-    color: #f8f9fa; /* Texto claro */
-    border: 1px solid #6c757d; /* Borde acorde al modo oscuro */
-    padding: 0.375rem 0.75rem;
-    margin-bottom: 0.75rem;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.cc_request_f input[type="button"] {
-    background-color: #6c757d; /* Botón con fondo oscuro */
-    color: #f8f9fa; /* Texto claro */
-    border: 1px solid #6c757d;
-    padding: 0.375rem 0.75rem;
-    cursor: pointer;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.cc_request_f input[type="button"]:hover {
-    background-color: #5a6268; /* Fondo más oscuro al pasar el mouse */
-    border-color: #545b62;
-}
-
-.modal-footer .btn-secondary {
-    background-color: #6c757d; /* Botón de cerrar con fondo oscuro */
-    color: #f8f9fa; /* Texto claro */
-    border: 1px solid #6c757d;
-}
-
-.modal-footer .btn-secondary:hover {
-    background-color: #5a6268; /* Fondo más oscuro al pasar el mouse */
-    border-color: #545b62;
+.btn-close:hover {
+    opacity: 1;
 }

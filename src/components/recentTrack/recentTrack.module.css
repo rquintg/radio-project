@@ -8,6 +8,7 @@
   padding: 10px 10px 5px; /* Espaciado interno */
   text-align: center; /* Alineación del texto al centro */
   width: 90vw; /* Ancho fijo para el cuadro */
+  height: 330px;
   max-width: 500px;
   color: white; /* Texto blanco */
 }
@@ -24,14 +25,14 @@
 
 .iframeWrapper {
   width: 100%;
-  overflow: hidden;
+  flex: 1;
+  overflow: auto;
   border-radius: 6px;
 }
 
 .historyFrame {
-  pointer-events: none; /* Desactiva la interacción del usuario */
   width: 100%;
-  height: 230px;
+  height: 100%;
   border: none;
   border-radius: 6px;
 }
@@ -40,7 +41,6 @@
   .container {
     padding: 10px 10px 5px; /* Espaciado interno */
   }
-
   .historyFrame {
     height: 318px;
   }

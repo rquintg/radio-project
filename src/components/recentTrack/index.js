@@ -16,7 +16,7 @@ export default function RecentTrack() {
       {isLoading && <SpinnerLoader />}
       <div className={styles.iframeWrapper}>
         <iframe
-          src="https://lsdradiohostserver.com/public/punk_hc/history?theme=dark"
+          src="https://a3.asurahosting.com/public/punk_medallo/history?theme=dark"
           frameBorder="0"
           allowtransparency="true"
           title="Historial de canciones"
