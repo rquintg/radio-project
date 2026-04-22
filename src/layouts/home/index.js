@@ -10,6 +10,14 @@ export default function Home() {
                 <div className={styles.container}>
                     <div className={styles.modal}>
                         <img src={PunkM} width="380px" alt="punk medallo"/>
+                        <button
+                            type="button"
+                            className={`btn ${styles.btnRequestSongMobile}`}
+                            data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop"
+                        >
+                            Pide tu canción
+                        </button>
                     </div>
                     <div className={styles.recentTrackWrapper}>
                         <RecentTrack />
