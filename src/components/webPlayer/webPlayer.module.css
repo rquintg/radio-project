@@ -20,7 +20,6 @@
   align-items: center;
   justify-content: flex-start;
   gap: 12px;
-  max-width: 520px;
   width: 100%;
 }
 
@@ -55,7 +54,7 @@
   border: none;
   width: 41px;
   height: 41px;
-  border-radius: 50%;
+  border-radius: 10%;
   cursor: pointer;
   font-size: 18px;
   display: flex;
@@ -68,7 +67,54 @@
 .btn:active { transform: scale(.93); }
 .btn:focus { outline: 2px solid #ff3b3b; outline-offset: 2px; }
 
-.volume { display: flex; align-items: center; gap: 6px; }
+.trackInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+  margin-left: 12px;
+  min-width: 0;
+  max-width: 400px;
+}
+
+.trackTitle {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.trackArtist {
+  color: #aaa;
+  font-size: 11px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.trackLoading {
+  color: #888;
+  font-size: 11px;
+  font-style: italic;
+}
+
+.trackLabel {
+  color: #ff3b3b;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+  display: block;
+}
+
+.volume { display: flex; align-items: center; gap: 6px; margin-left: auto; }
 .volIcon { color: #ff3b3b; font-size: 16px; }
 .slider { width: 90px; accent-color: #ff2e2e; cursor: pointer; }
 .slider:focus { outline: none; }
@@ -80,12 +126,18 @@
   .playerContainer { padding: 8px 16px; }
   .btn { width: 40px; height: 40px; }
   .slider { width: 75px; }
+  .trackInfo { max-width: 250px; }
+  .trackTitle { font-size: 11px; }
+  .trackArtist { font-size: 10px; }
 }
 
 @media (max-width: 680px) {
   /* Ya es fixed por defecto; aquí solo afinamos layout */
-  .cont { justify-content: space-around; }
+  .cont { justify-content: flex-start; }
   .slider { width: 70px; }
+  .trackInfo { max-width: 200px; }
+  .trackTitle { font-size: 11px; }
+  .trackArtist { font-size: 10px; }
 }
 
 @media (max-width: 520px) {
@@ -93,10 +145,15 @@
   .btn { width: 38px; height: 38px; font-size: 16px; }
   .textLive, .textOffline { font-size: 10px; }
   .playerContainer { padding: 6px 14px; }
+  .trackInfo { max-width: 140px; margin-left: 8px; }
+  .trackTitle { font-size: 11px; }
+  .trackArtist { font-size: 10px; }
+  .status { min-width: 75px; }
 }
 
 @media (max-width: 380px) {
   .btn { width: 34px; height: 34px; font-size: 15px; }
   .textLive, .textOffline { font-size: 9px; }
-  .status { min-width: 80px; }
+  .status { min-width: 75px; }
+  .trackInfo { display: none; }
 }

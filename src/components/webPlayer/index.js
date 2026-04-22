@@ -1,13 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./webPlayer.module.css";
+import useCurrentTrack from "../hooks/useCurrentTrack";
 
 export default function WebPlayer() {
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(0.8);
   const [isOnline, setIsOnline] = useState(true);
+  const { currentTrack, isLoadingTrack } = useCurrentTrack();
 
-  const STREAM_URL = "https://lsdradiohostserver.com/listen/punk_hc/radio.mp3";
+  const STREAM_URL = "https://a3.asurahosting.com/listen/punk_medallo/radio.mp3";
 
   // Vincular eventos del elemento <audio> para inferir estado del stream
   useEffect(() => {
@@ -73,49 +75,68 @@ export default function WebPlayer() {
   };
 
   return (
-    <div className={styles.playerContainer} role="region" aria-label="Reproductor de radio">
-      <div className={styles.cont}>
-        {/* Indicador de estado */}
-        <div className={styles.status} aria-live="polite">
-          <span className={isOnline ? styles.dotLive : styles.dotOffline} />
-          <span className={isOnline ? styles.textLive : styles.textOffline}>
+      <div className={styles.playerContainer} role="region" aria-label="Reproductor de radio">
+        <div className={styles.cont}>
+          {/* Indicador de estado */}
+          <div className={styles.status} aria-live="polite">
+            <span className={isOnline ? styles.dotLive : styles.dotOffline} />
+            <span className={isOnline ? styles.textLive : styles.textOffline}>
             {isOnline ? "EN VIVO" : "FUERA DE LÍNEA"}
           </span>
-        </div>
+          </div>
 
-        {/* Botón Play/Pausa */}
-        <button
-          type="button"
-          className={styles.btn}
-          onClick={togglePlay}
-          aria-label={isPlaying ? "Pausar" : "Reproducir"}
-          title={isPlaying ? "Pausar" : "Reproducir"}
-        >
-          {isPlaying ? <i className="bi bi-pause-fill"></i> : <i className="bi bi-play-fill"></i>}
-        </button>
+           {/* Botón Play/Pausa */}
+           <button
+               type="button"
+               className={styles.btn}
+               onClick={togglePlay}
+               aria-label={isPlaying ? "Pausar" : "Reproducir"}
+               title={isPlaying ? "Pausar" : "Reproducir"}
+           >
+             {isPlaying ? <i className="bi bi-pause-fill"></i> : <i className="bi bi-play-fill"></i>}
+           </button>
 
-          {/* Volumen (oculto en móvil muy pequeño vía CSS) */}
-        <div className={styles.volume} aria-label="Control de volumen">
+           {/* Información de la canción actual */}
+           <div className={styles.trackInfo} aria-live="polite" aria-atomic="true">
+             {isLoadingTrack ? (
+               <span className={styles.trackLoading}>Cargando...</span>
+             ) : currentTrack ? (
+               <>
+                 <span className={styles.trackLabel}>Está sonando:</span>
+                 <p className={styles.trackTitle} title={currentTrack.title}>
+                   {currentTrack.title}
+                 </p>
+                 <p className={styles.trackArtist} title={currentTrack.artist}>
+                   {currentTrack.artist}
+                 </p>
+               </>
+             ) : (
+               <span className={styles.trackLoading}>Sin información</span>
+             )}
+           </div>
+
+           {/* Volumen (oculto en móvil muy pequeño vía CSS) */}
+           <div className={styles.volume} aria-label="Control de volumen">
           <span className={styles.volIcon} aria-hidden>
               <i className="bi bi-volume-up-fill"></i>
           </span>
             <input
                 className={styles.slider}
-            type="range"
-            min="0"
-            max="1"
-            step="0.01"
-            value={volume}
-            onChange={handleVolume}
-            aria-valuemin={0}
-            aria-valuemax={1}
-            aria-valuenow={volume}
-          />
-        </div>
+                type="range"
+                min="0"
+                max="1"
+                step="0.01"
+                value={volume}
+                onChange={handleVolume}
+                aria-valuemin={0}
+                aria-valuemax={1}
+                aria-valuenow={volume}
+            />
+          </div>
 
-        {/* Elemento de audio oculto */}
-        <audio ref={audioRef} preload="none" src={STREAM_URL} />
+          {/* Elemento de audio oculto */}
+          <audio ref={audioRef} preload="none" src={STREAM_URL} />
+        </div>
       </div>
-    </div>
   );
 }
