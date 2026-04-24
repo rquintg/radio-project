@@ -7,6 +7,7 @@ import Contact from "../layouts/contact";
 import Descargas from "../layouts/blog";
 import WebPlayer from "../components/webPlayer";
 import FacebookPhotos from "../layouts/facebookPhotos";
+import InstagramPhotos from "../layouts/instagramPhotos";
 import NotFound from "../layouts/notFound";
 
 export default function MainRouter() {
@@ -19,6 +20,7 @@ export default function MainRouter() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/fotos" element={<FacebookPhotos />} />
+          <Route path="/eventos" element={<InstagramPhotos />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       {/* Reproductor persistente (no se desmonta al cambiar de ruta) */}

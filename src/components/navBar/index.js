@@ -75,6 +75,16 @@ export default function NavBar() {
                     className={({ isActive }) =>
                       `nav-link ${styles.navLink} ${isActive ? styles.active : ""}`
                     }
+                    to="/eventos"
+                  >
+                    Toques
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink
+                    className={({ isActive }) =>
+                      `nav-link ${styles.navLink} ${isActive ? styles.active : ""}`
+                    }
                     to="/descargas"
                   >
                     Descargas
@@ -90,7 +100,7 @@ export default function NavBar() {
                     Registro Fotográfico
                   </NavLink>
                 </li>
-                <li className="nav-item">
+                {/*<li className="nav-item">
                   <NavLink
                     className={({ isActive }) =>
                       `nav-link ${styles.navLink} ${isActive ? styles.active : ""}`
@@ -99,7 +109,7 @@ export default function NavBar() {
                   >
                     Contacto
                   </NavLink>
-                </li>
+                </li>*/}
               </ul>
               <div className={`vr ${styles.divider}`}></div>
               <li className="nav-item" style={{ listStyle: "none" }}>
