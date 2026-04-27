@@ -22,14 +22,17 @@ export default function SongRequest() {
                             {/* Widget de AzuraCast para solicitud de canciones */}
                             <iframe
                                 src={azuraCastWidgetUrl}
-                                frameBorder="0"
+                                sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-presentation"
+                                title="AzuraCast Song Request Widget"
+                                loading="lazy"
+                                referrerPolicy="no-referrer"
+                                aria-label="Formulario de solicitud de canciones de Punk Medallo"
                                 style={{
                                     width: '100%',
                                     minHeight: '600px',
                                     border: '0'
                                 }}
-                                title="AzuraCast Song Request Widget"
-                            ></iframe>
+                            />
                         </div>
                     </div>
                 </div>

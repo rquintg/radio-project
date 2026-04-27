@@ -1,0 +1,41 @@
+.adContainer {
+  margin: 20px 0;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 250px;
+}
+
+.adContainer ins {
+  max-width: 100%;
+}
+
+/* Banner responsivo */
+@media (max-width: 768px) {
+  .adContainer {
+    min-height: 200px;
+    margin: 15px 0;
+  }
+}
+
+/* Ads dentro del sidebar o contenedor lateral */
+.adSidebar {
+  margin: 15px 0;
+  padding: 10px;
+  background-color: rgba(23, 23, 23, 0.8);
+  border-left: 3px solid #ff0000;
+  border-radius: 4px;
+}
+
+/* Anuncios en grid para blog o lista */
+.adGrid {
+  margin: 25px 0;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+

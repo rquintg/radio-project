@@ -1,5 +1,6 @@
 import useFacebookPost from "../../components/hooks/useFacebookPost";
 import SpinnerLoading from "../../components/util/spinnerLoader";
+import GoogleAdsense from "../../components/googleAdsense";
 
 import styles from "./facebookPhotos.module.css";
 
@@ -29,6 +30,13 @@ export default function FacebookPhotos() {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Registro Fotográfico</h2>
+
+      {/* Anuncio 1 */}
+      <GoogleAdsense
+        adSlot="6789012345"
+        adFormat="auto"
+      />
+
       <div className={styles.grid}>
         {currentPhotos.map((photo) => (
           <div key={photo.id} className={styles.card}>
@@ -52,6 +60,12 @@ export default function FacebookPhotos() {
           </div>
         ))}
       </div>
+
+      {/* Anuncio 2 */}
+      <GoogleAdsense
+        adSlot="7890123456"
+        adFormat="auto"
+      />
 
       {/* Controles de Paginación */}
       <div className={styles.paginationContainer}>

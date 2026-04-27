@@ -1,5 +1,6 @@
 import useInstagramPosts from "../../components/hooks/useInstagramPosts";
 import SpinnerLoading from "../../components/util/spinnerLoader";
+import GoogleAdsense from "../../components/googleAdsense";
 import styles from "./instagramPhotos.module.css";
 
 export default function InstagramPhotos() {
@@ -28,6 +29,13 @@ export default function InstagramPhotos() {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Proximos Eventos</h2>
+
+      {/* Anuncio 1 */}
+      <GoogleAdsense
+        adSlot="8901234567"
+        adFormat="auto"
+      />
+
       <div className={styles.grid}>
         {currentPhotos.map((photo) => (
           <div key={photo.id} className={styles.card}>
@@ -51,6 +59,12 @@ export default function InstagramPhotos() {
           </div>
         ))}
       </div>
+
+      {/* Anuncio 2 */}
+      <GoogleAdsense
+        adSlot="9012345678"
+        adFormat="auto"
+      />
 
       {/* Controles de Paginación */}
       <div className={styles.paginationContainer}>
@@ -77,3 +91,4 @@ export default function InstagramPhotos() {
     </div>
   );
 }
+

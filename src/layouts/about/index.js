@@ -1,5 +1,6 @@
 import styles from "./about.module.css";
 import PunkLogo from "../../img/Logo-Punk-Medallo-2024 Blanco.png";
+import GoogleAdsense from "../../components/googleAdsense";
 
 export default function About() {
   return (
@@ -11,12 +12,18 @@ export default function About() {
             <img src={PunkLogo} alt="Punk Medallo" className={styles.heroLogo} />
           </div>
           {/*<h1 className={styles.heroTitle}>Acerca de</h1>
-          <p className={styles.heroSubtitle}>La voz del punk en Medellín</p>*/}
+           <p className={styles.heroSubtitle}>La voz del punk en Medellín</p>*/}
         </div>
       </div>
 
       {/* About Content */}
       <div className={styles.contentWrapper}>
+        {/* Anuncio 1 */}
+        <GoogleAdsense
+          adSlot="4567890123"
+          adFormat="auto"
+        />
+
         {/* Mission Section */}
         <section className={styles.section}>
           <div className={styles.sectionContent}>
@@ -132,3 +139,4 @@ export default function About() {
     </div>
   );
 }
+

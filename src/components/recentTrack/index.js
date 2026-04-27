@@ -17,15 +17,18 @@ export default function RecentTrack() {
       <div className={styles.iframeWrapper}>
         <iframe
           src="https://a3.asurahosting.com/public/punk_medallo/history?theme=dark"
-          frameBorder="0"
-          allowtransparency="true"
           title="Historial de canciones"
           className={styles.historyFrame}
           onLoad={handleLoad}
           allowFullScreen={false}
           loading="lazy"
           referrerPolicy="no-referrer"
-          sandbox="allow-same-origin allow-scripts"
+          sandbox="allow-same-origin allow-scripts allow-popups allow-presentation"
+          aria-label="Historial de reproducción de Punk Medallo"
+          style={{
+            border: 0,
+            backgroundColor: 'transparent'
+          }}
         />
       </div>
     </div>

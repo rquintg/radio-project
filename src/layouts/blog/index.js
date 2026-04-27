@@ -1,6 +1,7 @@
 import useBlogPosts from "../../components/hooks/useBlogPosts";
 import ButtonsPaginationBlog from "../../components/util/buttonsPaginationBlog";
 import SpinnerLoader from "../../components/util/spinnerLoader";
+import GoogleAdsense from "../../components/googleAdsense";
 
 import styles from './blog.module.css';
 
@@ -18,6 +19,13 @@ export default function Blog() {
     return (
         <div className={styles['blog-container']}>
             <h2 className={styles['blog-title']}>Descargar Musica</h2>
+
+            {/* Anuncio 1 - Bajo el título */}
+            <GoogleAdsense
+                adSlot="2345678901"
+                adFormat="auto"
+            />
+
             {loading && <div style={{textAlign: 'center', margin: '20px'}}>
                 <SpinnerLoader/>
             </div>}
@@ -30,6 +38,12 @@ export default function Blog() {
                 ))}
             </div>
 
+            {/* Anuncio 2 - Antes de paginación */}
+            <GoogleAdsense
+                adSlot="3456789012"
+                adFormat="auto"
+            />
+
             <ButtonsPaginationBlog
                 nextPageToken={nextPageToken}
                 prevPageTokens={prevPageTokens}
@@ -39,3 +53,5 @@ export default function Blog() {
         </div>
     );
 };
+
+
