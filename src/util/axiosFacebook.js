@@ -11,7 +11,7 @@ export const fetchFacebookPhotos = async () => {
     try {
         // Fetch posts and filter for those that have a full_picture
         const response = await axios.get(
-            `https://graph.facebook.com/v18.0/${PAGE_ID}/posts`,
+            `https://graph.facebook.com/v24.0/${PAGE_ID}/posts`,
             {
                 params: {
                     fields:
