@@ -2,11 +2,16 @@ import useBlogPosts from "../../components/hooks/useBlogPosts";
 import ButtonsPaginationBlog from "../../components/util/buttonsPaginationBlog";
 import SpinnerLoader from "../../components/util/spinnerLoader";
 import GoogleAdsense from "../../components/googleAdsense";
+import PageSEO from "../../components/SEO/PageSEO";
 
 import styles from './blog.module.css';
 
 
 export default function Blog() {
+    const breadcrumbItems = [
+        { name: "Inicio", url: "/" },
+        { name: "Descargas", url: "/descargas" }
+    ];
 
     const {
         posts,
@@ -17,7 +22,14 @@ export default function Blog() {
     } = useBlogPosts();
 
     return (
-        <div className={styles['blog-container']}>
+        <>
+            <PageSEO
+                title="Descargar Música - Punk Medallo"
+                description="Descarga y disfruta de la mejor música punk de Medellín. Accede a nuestro catálogo completo de artistas locales y bandas underground."
+                canonicalPath="/descargas"
+                breadcrumbItems={breadcrumbItems}
+            />
+            <div className={styles['blog-container']}>
             <h2 className={styles['blog-title']}>Descargar Musica</h2>
 
             {/* Anuncio 1 - Bajo el título */}
@@ -51,6 +63,7 @@ export default function Blog() {
                 loading={loading}
             />
         </div>
+        </>
     );
 };
 

@@ -1,10 +1,15 @@
 import useFacebookPost from "../../components/hooks/useFacebookPost";
 import SpinnerLoading from "../../components/util/spinnerLoader";
 import GoogleAdsense from "../../components/googleAdsense";
+import PageSEO from "../../components/SEO/PageSEO";
 
 import styles from "./facebookPhotos.module.css";
 
 export default function FacebookPhotos() {
+    const breadcrumbItems = [
+        { name: "Inicio", url: "/" },
+        { name: "Registro Fotográfico", url: "/fotos" }
+    ];
 
     const {
         photos,
@@ -28,7 +33,14 @@ export default function FacebookPhotos() {
     return <div className={styles.loading}>No se encontraron fotos.</div>;
 
   return (
-    <div className={styles.container}>
+    <>
+      <PageSEO
+        title="Registro Fotográfico - Punk Medallo"
+        description="Galería de fotos y eventos de Punk Medallo. Revive los mejores momentos del punk en Medellín a través de nuestro registro fotográfico."
+        canonicalPath="/fotos"
+        breadcrumbItems={breadcrumbItems}
+      />
+      <div className={styles.container}>
       <h2 className={styles.title}>Registro Fotográfico</h2>
 
       {/* Anuncio 1 */}
@@ -88,7 +100,8 @@ export default function FacebookPhotos() {
         >
           Siguiente →
         </button>
+       </div>
       </div>
-    </div>
+    </>
   );
 }

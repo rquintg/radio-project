@@ -1,9 +1,14 @@
 import useInstagramPosts from "../../components/hooks/useInstagramPosts";
 import SpinnerLoading from "../../components/util/spinnerLoader";
 import GoogleAdsense from "../../components/googleAdsense";
+import PageSEO from "../../components/SEO/PageSEO";
 import styles from "./instagramPhotos.module.css";
 
 export default function InstagramPhotos() {
+    const breadcrumbItems = [
+        { name: "Inicio", url: "/" },
+        { name: "Toques", url: "/eventos" }
+    ];
 
     const {
         photos,
@@ -27,7 +32,14 @@ export default function InstagramPhotos() {
     return <div className={styles.loading}>No se encontraron eventos.</div>;
 
   return (
-    <div className={styles.container}>
+    <>
+      <PageSEO
+        title="Próximos Toques - Eventos Punk Medallo"
+        description="Mantente actualizado con los próximos eventos y toques punk en Medellín. Síguenos en Punk Medallo para conocer las fechas de los artistas locales."
+        canonicalPath="/eventos"
+        breadcrumbItems={breadcrumbItems}
+      />
+      <div className={styles.container}>
       <h2 className={styles.title}>Proximos Eventos</h2>
 
       {/* Anuncio 1 */}
@@ -87,8 +99,9 @@ export default function InstagramPhotos() {
         >
           Siguiente →
         </button>
+       </div>
       </div>
-    </div>
+    </>
   );
 }
 

@@ -1,10 +1,23 @@
 import styles from "./about.module.css";
 import PunkLogo from "../../img/Logo-Punk-Medallo-2024 Blanco.png";
 import GoogleAdsense from "../../components/googleAdsense";
+import PageSEO from "../../components/SEO/PageSEO";
 
 export default function About() {
+  const breadcrumbItems = [
+    { name: "Inicio", url: "/" },
+    { name: "Acerca de", url: "/about" }
+  ];
+
   return (
-    <div className={styles.container}>
+    <>
+      <PageSEO
+        title="Acerca de Punk Medallo - Historia del Punk en Medellín"
+        description="Conoce la historia de Punk Medallo, la radio 24/7 que preserva y transmite lo mejor del punk local de Medellín. Autenticidad, libertad, comunidad y rebeldía."
+        canonicalPath="/about"
+        breadcrumbItems={breadcrumbItems}
+      />
+      <div className={styles.container}>
       {/* Hero Section */}
       <div className={styles.heroSection}>
         <div className={styles.heroContent}>
@@ -137,6 +150,7 @@ export default function About() {
         </section>
       </div>
     </div>
+    </>
   );
 }
 

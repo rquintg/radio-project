@@ -3,6 +3,7 @@ import { FloatingWhatsApp } from 'react-floating-whatsapp';
 import {Toaster} from "sileo";
 import MainRouter from "./routes";
 import Footer from "./components/footer";
+import SiteNavigationSchema from "./components/SEO/SiteNavigationSchema";
 
 import avatar from '../src/img/logo_punk_medallo.jpg';
 import './App.css';
@@ -11,6 +12,7 @@ import './App.css';
 function App() {
   return (
    <div>
+       <SiteNavigationSchema />
        <Toaster position={'top-right'}
                 offset={{top: 75}}
                 options={{
