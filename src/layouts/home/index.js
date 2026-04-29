@@ -1,9 +1,12 @@
-import styles from "./home.module.css";
-import PunkM from "../../img/Logo-Punk-Medallo-2024 Blanco.png";
-import RecentTrack from "../../components/recentTrack";
+import {Suspense, lazy} from "react";
 import StaffComponent from "../../components/staffComponent";
 import GoogleAdsense from "../../components/googleAdsense";
 import PageSEO from "../../components/SEO/PageSEO";
+
+import styles from "./home.module.css";
+import PunkM from "../../img/Logo-Punk-Medallo-2024 Blanco.png";
+
+const RecentTrack = lazy(() => import("../../components/recentTrack"));
 
 export default function Home() {
     const breadcrumbItems = [
@@ -22,7 +25,7 @@ export default function Home() {
                 <div className={styles.container}>
                     <div className={styles.modal}>
                         <h1 className={styles.homeTitle}>Punk Medallo</h1>
-                        <img src={PunkM} width="380px" alt="punk medallo"/>
+                        <img src={PunkM} width="380px" alt="punk medallo" loading="lazy" decoding="async" />
                         <button
                             type="button"
                             className={`btn ${styles.btnRequestSongMobile}`}
@@ -37,9 +40,11 @@ export default function Home() {
                         adSlot="1234567890"
                         adFormat="auto"
                     />
-                    <div className={styles.recentTrackWrapper}>
-                        <RecentTrack />
-                    </div>
+                    <Suspense fallback={<div className={styles.recentTrackWrapper}></div>}>
+                        <div className={styles.recentTrackWrapper}>
+                            <RecentTrack />
+                        </div>
+                    </Suspense>
                 </div>
             </div>
             {/* Anuncio 2 - Entre el footer y el staff component */}
