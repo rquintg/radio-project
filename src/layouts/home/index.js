@@ -21,7 +21,7 @@ export default function Home() {
             <div className={styles.homeSection}>
                 <div className={styles.container}>
                     <div className={styles.modal}>
-                        <h1 style={{fontSize: '2rem', fontWeight: 'bold', marginBottom: '1rem', textAlign: 'center', color: '#fff'}}>Punk Medallo</h1>
+                        <h1 className={styles.homeTitle}>Punk Medallo</h1>
                         <img src={PunkM} width="380px" alt="punk medallo"/>
                         <button
                             type="button"
