@@ -50,6 +50,9 @@ export default function PageSEO({
     updateOrCreateMeta('og:description', description, true);
     updateOrCreateMeta('og:url', fullUrl, true);
     updateOrCreateMeta('og:image', ogImage, true);
+    updateOrCreateMeta('og:image:width', '1200', true);
+    updateOrCreateMeta('og:image:height', '630', true);
+    updateOrCreateMeta('og:image:type', 'image/jpeg', true);
     updateOrCreateMeta('og:type', 'website', true);
 
     // Twitter
