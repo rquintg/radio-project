@@ -12,7 +12,7 @@ export default function About() {
   return (
     <>
       <PageSEO
-        title="Acerca de Punk Medallo - Historia del Punk en Medellín"
+        title="Acerca de Punk Medallo"
         description="Conoce la historia de Punk Medallo, la radio 24/7 que preserva y transmite lo mejor del punk local de Medellín. Autenticidad, libertad, comunidad y rebeldía."
         canonicalPath="/about"
         breadcrumbItems={breadcrumbItems}

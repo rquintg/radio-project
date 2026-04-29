@@ -34,8 +34,8 @@ export default function InstagramPhotos() {
   return (
     <>
       <PageSEO
-        title="Próximos Toques - Eventos Punk Medallo"
-        description="Mantente actualizado con los próximos eventos y toques punk en Medellín. Síguenos en Punk Medallo para conocer las fechas de los artistas locales."
+        title="Próximos Toques - Punk Medallo"
+        description="Mantente actualizado con los próximos eventos y toques punk en Medellín. Síguenos en Punk Medallo"
         canonicalPath="/eventos"
         breadcrumbItems={breadcrumbItems}
       />

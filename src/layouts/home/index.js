@@ -16,8 +16,8 @@ export default function Home() {
     return (
         <>
             <PageSEO
-                title="Punk Medallo - Radio 24/7 del Punk en Medellín"
-                description="Lo más grotesco, viejo, perdido en el tiempo y nuevo del punk local. Escucha, pide canciones y únete a la comunidad punk de Medellín."
+                title="Punk Medallo - Radio 24/7 de puro punk"
+                description="Lo más grotesco, viejo, perdido en el tiempo y nuevo del punk local en un solo lugar"
                 canonicalPath="/"
                 ogImage="https://punkmedallo.com/logo_punk_medallo.jpg"
                 breadcrumbItems={breadcrumbItems}
