@@ -37,10 +37,10 @@ export default function Home() {
                         </button>
                     </div>
                     {/* Anuncio 1 - Arriba del historial */}
-                    <GoogleAdsense
+                    {/*<GoogleAdsense
                         adSlot="1234567890"
                         adFormat="auto"
-                    />
+                    />*/}
                     <Suspense fallback={<div className={styles.recentTrackWrapper}></div>}>
                         <div className={styles.recentTrackWrapper}>
                             <RecentTrack />

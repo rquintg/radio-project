@@ -6,17 +6,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 250px;
+  width: 100%;
+  overflow: hidden;
 }
 
 .adContainer ins {
+  display: block !important;
+  width: 100% !important;
   max-width: 100%;
 }
 
-/* Banner responsivo */
-@media (max-width: 768px) {
+/* Ads responsivos */
+@media (min-width: 1200px) {
   .adContainer {
-    min-height: 200px;
+    min-height: 280px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .adContainer {
+    min-height: 250px;
+  }
+}
+
+@media (max-width: 767px) {
+  .adContainer {
+    min-height: 100px;
     margin: 15px 0;
   }
 }
@@ -28,6 +43,7 @@
   background-color: rgba(23, 23, 23, 0.8);
   border-left: 3px solid #ff0000;
   border-radius: 4px;
+  width: 100%;
 }
 
 /* Anuncios en grid para blog o lista */
@@ -37,5 +53,13 @@
   background-color: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+}
+
+/* Ads sticky (opcional) */
+.stickyAd {
+  position: sticky;
+  bottom: 0;
+  z-index: 100;
 }
 

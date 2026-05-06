@@ -40,6 +40,18 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1745023730981943"
             crossorigin="anonymous"></script>
 
+    <!-- Ad initialization handler -->
+    <script>
+      window.adsbygoogle = window.adsbygoogle || [];
+
+      // Global error handler for AdSense
+      window.addEventListener('error', function(event) {
+        if (event.filename && event.filename.includes('adsbygoogle')) {
+          console.log('AdSense script error detected (this is normal during review):', event.message);
+        }
+      });
+    </script>
+
     <title>Punk Medallo</title>
   </head>
   <body>

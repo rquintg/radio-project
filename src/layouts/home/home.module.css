@@ -13,7 +13,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    margin-bottom: 25vh;
+    margin-bottom: 50vh;
     height: 44vh;
     width: 100vw;
     color: white;
@@ -86,7 +86,7 @@
 
 @media (max-width: 768px) {
     .container {
-        margin-bottom: 40vh;
+        margin-bottom: 41vh;
     }
 
     .modal img {
@@ -130,7 +130,7 @@
 @media(min-width: 1200px) {
     .container {
         height: 58vh;
-        margin-bottom: 16vh;
+        margin-bottom: 38vh;
     }
     .recentTrackWrapper {
     position: absolute;
