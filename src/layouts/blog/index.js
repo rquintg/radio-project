@@ -1,4 +1,4 @@
-import useBlogPosts from "../../components/hooks/useBlogPosts";
+import useBlogPosts from "../../hooks/useBlogPosts";
 import ButtonsPaginationBlog from "../../components/util/buttonsPaginationBlog";
 import SpinnerLoader from "../../components/util/spinnerLoader";
 import GoogleAdsense from "../../components/googleAdsense";

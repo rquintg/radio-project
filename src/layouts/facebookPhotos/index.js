@@ -1,4 +1,4 @@
-import useFacebookPost from "../../components/hooks/useFacebookPost";
+import useFacebookPost from "../../hooks/useFacebookPost";
 import SpinnerLoading from "../../components/util/spinnerLoader";
 import GoogleAdsense from "../../components/googleAdsense";
 import PageSEO from "../../components/SEO/PageSEO";

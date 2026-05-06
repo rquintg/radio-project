@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import {fetchBlogPosts} from "../../../util/axiosBlog";
+import {fetchBlogPosts} from "../../util/axiosBlog";
 
 export default function useBlogPosts() {
     const [posts, setPosts] = useState([]);

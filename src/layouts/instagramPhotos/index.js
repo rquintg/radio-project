@@ -1,4 +1,4 @@
-import useInstagramPosts from "../../components/hooks/useInstagramPosts";
+import useInstagramPosts from "../../hooks/useInstagramPosts";
 import SpinnerLoading from "../../components/util/spinnerLoader";
 import GoogleAdsense from "../../components/googleAdsense";
 import PageSEO from "../../components/SEO/PageSEO";

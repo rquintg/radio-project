@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./webPlayer.module.css";
-import useCurrentTrack from "../hooks/useCurrentTrack";
+import useCurrentTrack from "../../hooks/useCurrentTrack";
 
 export default function WebPlayer() {
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(0.8);
   const [isOnline, setIsOnline] = useState(true);
-  const { currentTrack, isLoadingTrack } = useCurrentTrack();
+  const { currentTrack, nextTrack, isLoading } = useCurrentTrack();
 
   const STREAM_URL = "https://a3.asurahosting.com/listen/punk_medallo/radio.mp3";
 
@@ -98,18 +98,30 @@ export default function WebPlayer() {
 
            {/* Información de la canción actual */}
            <div className={styles.trackInfo} aria-live="polite" aria-atomic="true">
-             {isLoadingTrack ? (
+             {isLoading ? (
                <span className={styles.trackLoading}>Cargando...</span>
              ) : currentTrack ? (
-               <>
-                 <span className={styles.trackLabel}>Está sonando:</span>
-                 <p className={styles.trackTitle} title={currentTrack.title}>
-                   {currentTrack.title}
-                 </p>
-                 <p className={styles.trackArtist} title={currentTrack.artist}>
-                   {currentTrack.artist}
-                 </p>
-               </>
+               <div className={styles.tracksContainer}>
+                 <div className={styles.trackSection}>
+                   <span className={styles.trackLabel}>Está sonando:</span>
+                   <p className={styles.trackTitle} title={currentTrack.title}>
+                     {currentTrack.title}
+                   </p>
+                   <p className={styles.trackArtist} title={currentTrack.artist}>
+                     {currentTrack.artist}
+                   </p>
+                 </div>
+
+                 {/*<div className={styles.trackSection}>
+                   <span className={styles.trackLabel}>Próxima:</span>
+                   <p className={styles.trackTitle} title={nextTrack.title}>
+                     {nextTrack.title}
+                   </p>
+                   <p className={styles.trackArtist} title={nextTrack.artist}>
+                     {nextTrack.artist}
+                   </p>
+                 </div>*/}
+               </div>
              ) : (
                <span className={styles.trackLoading}>Sin información</span>
              )}

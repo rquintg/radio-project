@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchFacebookPhotos } from "../../../util/axiosFacebook";
+import { fetchFacebookPhotos } from "../../util/axiosFacebook";
 
 export default function useFacebookPost() {
     const [photos, setPhotos] = useState([]);

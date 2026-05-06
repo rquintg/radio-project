@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchInstagramPhotos } from "../../../util/axiosInstagram";
+import { fetchInstagramPhotos } from "../../util/axiosInstagram";
 
 export default function useInstagramPosts() {
     const [photos, setPhotos] = useState([]);
