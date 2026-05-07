@@ -7,6 +7,7 @@ export default function WebPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(0.8);
   const [isOnline, setIsOnline] = useState(true);
+  const [showNext, setShowNext] = useState(false);
   const { currentTrack, nextTrack, isLoading } = useCurrentTrack();
 
   const STREAM_URL = "https://a3.asurahosting.com/listen/punk_medallo/radio.mp3";
@@ -44,6 +45,14 @@ export default function WebPlayer() {
       window.removeEventListener("online", handleOnline);
       window.removeEventListener("offline", handleOffline);
     };
+  }, []);
+
+  // Alternar entre canción actual y próxima cada 7 segundos
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowNext((prev) => !prev);
+    }, 7000);
+    return () => clearInterval(interval);
   }, []);
 
   const togglePlay = async () => {
@@ -100,29 +109,19 @@ export default function WebPlayer() {
            <div className={styles.trackInfo} aria-live="polite" aria-atomic="true">
              {isLoading ? (
                <span className={styles.trackLoading}>Cargando...</span>
-             ) : currentTrack ? (
-               <div className={styles.tracksContainer}>
-                 <div className={styles.trackSection}>
-                   <span className={styles.trackLabel}>Está sonando:</span>
-                   <p className={styles.trackTitle} title={currentTrack.title}>
-                     {currentTrack.title}
-                   </p>
-                   <p className={styles.trackArtist} title={currentTrack.artist}>
-                     {currentTrack.artist}
-                   </p>
-                 </div>
-
-                 {/*<div className={styles.trackSection}>
-                   <span className={styles.trackLabel}>Próxima:</span>
-                   <p className={styles.trackTitle} title={nextTrack.title}>
-                     {nextTrack.title}
-                   </p>
-                   <p className={styles.trackArtist} title={nextTrack.artist}>
-                     {nextTrack.artist}
-                   </p>
-                 </div>*/}
-               </div>
-             ) : (
+              ) : currentTrack ? (
+                <div key={showNext} className={`${styles.trackSection} ${styles.fadeIn}`}>
+                  <span className={styles.trackLabel}>
+                    {showNext ? "Próxima:" : "Está sonando:"}
+                  </span>
+                  <p className={styles.trackTitle} title={showNext ? nextTrack.title : currentTrack.title}>
+                    {showNext ? nextTrack.title : currentTrack.title}
+                  </p>
+                  <p className={styles.trackArtist} title={showNext ? nextTrack.artist : currentTrack.artist}>
+                    {showNext ? nextTrack.artist : currentTrack.artist}
+                  </p>
+                </div>
+              ) : (
                <span className={styles.trackLoading}>Sin información</span>
              )}
            </div>

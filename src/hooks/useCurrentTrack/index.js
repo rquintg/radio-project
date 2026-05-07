@@ -5,11 +5,16 @@ export default function useCurrentTrack() {
   const [nextTrack, setNextTrack] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [hasInitialized, setHasInitialized] = useState(false);
 
   useEffect(() => {
     const fetchTracks = async () => {
       try {
-        setIsLoading(true);
+        // Solo mostrar loading en la primera carga
+        if (!hasInitialized) {
+          setIsLoading(true);
+        }
+
         const response = await fetch(
           "https://a3.asurahosting.com/api/nowplaying/punk_medallo"
         );
@@ -39,21 +44,31 @@ export default function useCurrentTrack() {
         }
 
         setError(null);
+
+        // Marcar que se inicializó y desactivar loading
+        if (!hasInitialized) {
+          setHasInitialized(true);
+          setIsLoading(false);
+        }
       } catch (err) {
         console.error("Error fetching tracks:", err);
         setError(err.message);
-        setCurrentTrack(null);
-        setNextTrack(null);
-      } finally {
-        setIsLoading(false);
+
+        // Solo limpiar si es la primera carga
+        if (!hasInitialized) {
+          setCurrentTrack(null);
+          setNextTrack(null);
+          setIsLoading(false);
+          setHasInitialized(true);
+        }
       }
     };
 
     fetchTracks();
-    const interval = setInterval(fetchTracks, 10000000);
+    const interval = setInterval(fetchTracks, 10000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [hasInitialized]);
 
   return { currentTrack, nextTrack, isLoading, error };
 }
