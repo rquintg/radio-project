@@ -130,7 +130,7 @@
 @media(min-width: 1200px) {
     .container {
         height: 58vh;
-        margin-bottom: 38vh;
+        margin-bottom: 10vh;
     }
     .recentTrackWrapper {
     position: absolute;
