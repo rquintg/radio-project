@@ -43,7 +43,7 @@ export default function Otros() {
       <PageSEO
         title="Páginas Amigas - Punk Medallo"
         description="Conecta con nuestras páginas amigas: proyectos independientes y alternativos de Medellín que comparten nuestra filosofía punk."
-        canonicalPath="/otros"
+        canonicalPath="/amigos"
         breadcrumbItems={breadcrumbItems}
       />
 

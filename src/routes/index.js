@@ -8,7 +8,7 @@ import Descargas from "../layouts/blog";
 import WebPlayer from "../components/webPlayer";
 import FacebookPhotos from "../layouts/facebookPhotos";
 import InstagramPhotos from "../layouts/instagramPhotos";
-import Otros from "../layouts/otros";
+import Otros from "../layouts/amigos";
 import NotFound from "../layouts/notFound";
 
 export default function MainRouter() {
