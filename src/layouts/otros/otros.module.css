@@ -1,0 +1,554 @@
+/* Otros Layout Styles - Páginas Amigas */
+
+/* Container & General */
+.container {
+  min-height: 100vh;
+  background-color: #0a0a0a;
+  color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hero Section */
+.heroSection {
+  position: relative;
+  background-image: url("../../img/fondo.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  width: 100vw;
+  color: white;
+  z-index: 1;
+  padding-top: 80px;
+  margin-left: calc(-50vw + 50%);
+}
+
+.heroSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.7) 100%);
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.heroTitle {
+  /* Ocultar visualmente pero mantener para SEO y screen readers */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.logoContainer {
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.heroLogo {
+  width: 480px;
+  height: auto;
+  max-width: 90vw;
+  filter: drop-shadow(0 4px 6px rgba(164, 2, 2, 0.5));
+}
+
+/* Content Wrapper */
+.contentWrapper {
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+/* Intro Section */
+.introSection {
+  background: rgba(52, 58, 64, 0.4);
+  padding: 2.5rem;
+  border-radius: 12px;
+  border-left: 5px solid #a40202;
+  backdrop-filter: blur(10px);
+  margin-bottom: 4rem;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.introText {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #e0e0e0;
+  margin: 0;
+  text-align: center;
+}
+
+/* Section Title */
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid #a40202;
+  display: inline-block;
+  letter-spacing: 1px;
+  animation: slideInUp 0.6s ease-out;
+}
+
+/* Friends Grid */
+.friendsSection {
+  margin-bottom: 5rem;
+}
+
+.friendsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+/* Friend Card */
+.friendCard {
+  background: rgba(52, 58, 64, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid rgba(164, 2, 2, 0.2);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+  backdrop-filter: blur(10px);
+  animation: fadeInUp 0.8s ease-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.friendCard:hover {
+  transform: translateY(-12px);
+  border-color: #a40202;
+  box-shadow:
+    0 20px 40px rgba(164, 2, 2, 0.25),
+    0 0 40px rgba(164, 2, 2, 0.15);
+}
+
+/* Card Image Container */
+.cardImageContainer {
+  position: relative;
+  overflow: hidden;
+  height: 280px;
+  background: linear-gradient(135deg, rgba(164, 2, 2, 0.1) 0%, rgba(52, 58, 64, 0.5) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.friendCard:hover .cardImage {
+  transform: scale(1.08) rotate(1deg);
+}
+
+/* Card Overlay */
+.cardOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(164, 2, 2, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  backdrop-filter: blur(2px);
+}
+
+.friendCard:hover .cardOverlay {
+  opacity: 1;
+}
+
+.overlayContent {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  animation: slideUp 0.4s ease-out;
+}
+
+
+.overlayText {
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+/* Card Content */
+.cardContent {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin: 0 0 0.8rem 0;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.friendCard:hover .cardTitle {
+  color: #ff6b6b;
+}
+
+.cardDescription {
+  font-size: 0.95rem;
+  color: #d0d0d0;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* Card Link */
+.cardLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #a40202 0%, #d40202 100%);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 700;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+  border: 2px solid #a40202;
+  font-size: 0.95rem;
+  width: fit-content;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+.cardLink:hover {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff4444 100%);
+  border-color: #ff6b6b;
+  box-shadow: 0 6px 20px rgba(164, 2, 2, 0.4);
+  transform: translateX(4px);
+}
+
+.linkArrow {
+  transition: transform 0.3s ease;
+}
+
+.cardLink:hover .linkArrow {
+  transform: translateX(4px);
+}
+
+/* CTA Section */
+.ctaSection {
+  background: linear-gradient(135deg, rgba(164, 2, 2, 0.25) 0%, rgba(164, 2, 2, 0.1) 100%);
+  padding: 3.5rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  border: 2px solid #a40202;
+  backdrop-filter: blur(10px);
+  margin-top: 3rem;
+  animation: fadeIn 0.8s ease-out 0.4s both;
+}
+
+.ctaSection h2 {
+  font-size: 2rem;
+  color: #ffffff;
+  margin: 0 0 1rem 0;
+  font-weight: 900;
+}
+
+.ctaSection p {
+  font-size: 1rem;
+  color: #d0d0d0;
+  margin: 0 0 2rem 0;
+  line-height: 1.7;
+}
+
+/* CTA Buttons */
+.ctaButtons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btnPrimary,
+.btnSecondary {
+  text-decoration: none;
+  padding: 0.85rem 2.5rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  font-weight: 700;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+  display: inline-block;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border: 2px solid transparent;
+}
+
+.btnPrimary {
+  background: linear-gradient(135deg, #a40202 0%, #d40202 100%);
+  color: #ffffff;
+  border-color: #a40202;
+}
+
+.btnPrimary:hover {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff4444 100%);
+  border-color: #ff6b6b;
+  box-shadow: 0 8px 25px rgba(164, 2, 2, 0.4);
+  transform: translateY(-3px);
+}
+
+.btnSecondary {
+  background-color: transparent;
+  color: #ff6b6b;
+  border-color: #a40202;
+}
+
+.btnSecondary:hover {
+  background-color: #a40202;
+  color: #ffffff;
+  border-color: #ff6b6b;
+  box-shadow: 0 8px 25px rgba(164, 2, 2, 0.3);
+  transform: translateY(-3px);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .heroSection {
+    height: 40vh;
+  }
+
+  .heroLogo {
+    width: 350px;
+  }
+
+  .contentWrapper {
+    padding: 2rem 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+
+  .friendsGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .introText {
+    font-size: 1rem;
+  }
+
+  .ctaButtons {
+    flex-direction: column;
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .cardContent {
+    padding: 1.5rem;
+  }
+
+  .ctaSection {
+    padding: 2rem;
+  }
+
+  .ctaSection h2 {
+    font-size: 1.6rem;
+  }
+
+  .ctaSection p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSection {
+    height: 35vh;
+    padding-top: 60px;
+  }
+
+  .heroLogo {
+    width: 280px;
+  }
+
+  .contentWrapper {
+    padding: 1.5rem 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .friendsGrid {
+    gap: 1.5rem;
+  }
+
+  .cardImageContainer {
+    height: 220px;
+  }
+
+  .cardContent {
+    padding: 1rem;
+  }
+
+  .cardTitle {
+    font-size: 1.2rem;
+  }
+
+  .cardDescription {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .cardLink {
+    padding: 0.65rem 1.2rem;
+    font-size: 0.85rem;
+  }
+
+  .introSection {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .introText {
+    font-size: 0.95rem;
+  }
+
+  .ctaSection {
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .ctaSection h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .ctaSection p {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.85rem;
+    max-width: 100%;
+  }
+
+  .ctaButtons {
+    gap: 0.8rem;
+  }
+
+
+  .overlayText {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 360px) {
+
+  .sectionTitle {
+    font-size: 1.2rem;
+  }
+
+  .cardTitle {
+    font-size: 1rem;
+  }
+}
+
