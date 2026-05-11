@@ -40,16 +40,15 @@ export  default function staffComponent (){
 
                     <div className={styles.servicio}>
 
-                        <a href="https://www.facebook.com/xPUNKMEDALLOx" target="_blank" rel="noopener noreferrer">
-                            <h3>Punk Medallo</h3>
+                        <a href="/otros">
+                            <h3>Páginas Amigas</h3>
                             <div className={styles.iconos}>
 
-                                <img src={PunkM} alt="punk medallo"/>
+                                <img src={PunkM} alt="páginas amigas"/>
                             </div>
                         </a>
 
-                        <p>Fuego el regionalismo,las banderas y las fronteras
-                            Hacemos memoria de nuestra huella en este lodazal.</p>
+                        <p>Conecta con proyectos independientes y alternativos que comparten nuestro espíritu punk.</p>
                     </div>
 
                 </div>
