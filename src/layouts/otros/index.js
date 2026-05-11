@@ -11,7 +11,7 @@ import SotanoImg from "../../img/amigos/sotano.png";
 export default function Otros() {
   const breadcrumbItems = [
     { name: "Inicio", url: "/" },
-    { name: "Páginas Amigas", url: "/otros" }
+    { name: "Páginas Amigas", url: "/amigos" }
   ];
 
   const friendPages = [

@@ -105,7 +105,7 @@ export default function NavBar() {
                     className={({ isActive }) =>
                       `nav-link ${styles.navLink} ${isActive ? styles.active : ""}`
                     }
-                    to="/otros"
+                    to="/amigos"
                   >
                     Páginas Amigas
                   </NavLink>

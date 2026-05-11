@@ -22,7 +22,7 @@ export default function MainRouter() {
           <Route path="/about" element={<About />} />
           <Route path="/fotos" element={<FacebookPhotos />} />
           <Route path="/eventos" element={<InstagramPhotos />} />
-          <Route path="/otros" element={<Otros />} />
+          <Route path="/amigos" element={<Otros />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       {/* Reproductor persistente (no se desmonta al cambiar de ruta) */}

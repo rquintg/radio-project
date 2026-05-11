@@ -40,7 +40,7 @@ export  default function staffComponent (){
 
                     <div className={styles.servicio}>
 
-                        <a href="/otros">
+                        <a href="/amigos">
                             <h3>Páginas Amigas</h3>
                             <div className={styles.iconos}>
 
