@@ -14,7 +14,7 @@ export default function SongRequest() {
                 <div className="modal-dialog modal-lg modal-dialog-centered">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h6 className="modal-title fs-6 " id="staticBackdropLabel">Solo puedes solicitar una cancion cada 5 minutos</h6> <i className="bi bi-arrow-left-short" style={{color: 'red'}}></i>
+                            <h6 className="modal-title fs-6 " id="staticBackdropLabel">Puedes solicitar la misma cancion cada 5 minutos</h6> <i className="bi bi-arrow-left-short" style={{color: 'red'}}></i>
                             <button type="button" className="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                         </div>

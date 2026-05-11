@@ -100,6 +100,16 @@ export default function NavBar() {
                     Registro Fotográfico
                   </NavLink>
                 </li>
+                <li className="nav-item">
+                  <NavLink
+                    className={({ isActive }) =>
+                      `nav-link ${styles.navLink} ${isActive ? styles.active : ""}`
+                    }
+                    to="/otros"
+                  >
+                    Páginas Amigas
+                  </NavLink>
+                </li>
                 {/*<li className="nav-item">
                   <NavLink
                     className={({ isActive }) =>
