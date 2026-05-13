@@ -1,6 +1,6 @@
 import ContactForm from "../../components/contactForm";
 import StaffComponent from "../../components/staffComponent";
-import GoogleAdsense from "../../components/googleAdsense";
+// import GoogleAdsense from "../../components/googleAdsense";
 import PageSEO from "../../components/SEO/PageSEO";
 
 import styles from "./contact.module.css";
@@ -23,14 +23,13 @@ export default function Contact() {
                 <ContactForm />
             </div>
             {/* Anuncio entre formulario y staff */}
-            <GoogleAdsense
+            {/* <GoogleAdsense
                 adSlot="5678901234"
                 adFormat="auto"
-            />
+            /> */}
             <div className={styles.contenedor_staff}>
                 <StaffComponent />
             </div>
         </>
     );
 }
-

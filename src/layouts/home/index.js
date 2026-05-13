@@ -1,6 +1,6 @@
 import {Suspense, lazy} from "react";
 import StaffComponent from "../../components/staffComponent";
-import GoogleAdsense from "../../components/googleAdsense";
+// import GoogleAdsense from "../../components/googleAdsense";
 import PageSEO from "../../components/SEO/PageSEO";
 
 import styles from "./home.module.css";
@@ -49,12 +49,11 @@ export default function Home() {
                 </div>
             </div>
             {/* Anuncio 2 - Entre el footer y el staff component */}
-            <GoogleAdsense
+            {/* <GoogleAdsense
                 adSlot="9876543210"
                 adFormat="auto"
-            />
+            /> */}
             <StaffComponent/>
         </>
     );
 }
-

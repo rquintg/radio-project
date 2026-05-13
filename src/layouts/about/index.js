@@ -1,6 +1,6 @@
 import styles from "./about.module.css";
 import PunkLogo from "../../img/Logo-Punk-Medallo-2024 Blanco.png";
-import GoogleAdsense from "../../components/googleAdsense";
+// import GoogleAdsense from "../../components/googleAdsense";
 import PageSEO from "../../components/SEO/PageSEO";
 
 export default function About() {
@@ -32,10 +32,10 @@ export default function About() {
       {/* About Content */}
       <div className={styles.contentWrapper}>
         {/* Anuncio 1 */}
-        <GoogleAdsense
+        {/* <GoogleAdsense
           adSlot="4567890123"
           adFormat="auto"
-        />
+        /> */}
 
         {/* Mission Section */}
         <section className={styles.section}>
@@ -153,4 +153,3 @@ export default function About() {
     </>
   );
 }
-

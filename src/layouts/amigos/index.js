@@ -1,6 +1,6 @@
 import styles from "./otros.module.css";
 import PageSEO from "../../components/SEO/PageSEO";
-import GoogleAdsense from "../../components/googleAdsense";
+// import GoogleAdsense from "../../components/googleAdsense";
 import PunkLogo from "../../img/Logo-Punk-Medallo-2024 Blanco.png";
 
 // Import friend page images
@@ -61,10 +61,10 @@ export default function Otros() {
         {/* Content Section */}
         <div className={styles.contentWrapper}>
           {/* Anuncio 1 */}
-          <GoogleAdsense
+          {/* <GoogleAdsense
             adSlot="7891234567"
             adFormat="auto"
-          />
+          /> */}
 
           {/* Introduction Section */}
           <section className={styles.introSection}>
@@ -133,10 +133,10 @@ export default function Otros() {
         </div>
 
         {/* Anuncio 2 */}
-        <GoogleAdsense
+        {/* <GoogleAdsense
           adSlot="9876543217"
           adFormat="auto"
-        />
+        /> */}
       </div>
     </>
   );

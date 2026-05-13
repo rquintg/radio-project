@@ -14,8 +14,8 @@ export default function SiteNavigationSchema() {
     "logo": "https://punkmedallo.com/logo_punk_medallo.jpg",
     "description": "Lo más grotesco, viejo, perdido en el tiempo y nuevo del punk local en un solo lugar, Radio 24/7",
     "sameAs": [
-      "https://www.facebook.com/punkmedallo",
-      "https://www.instagram.com/punkmedallo"
+      "https://www.facebook.com/xPUNKMEDALLOx",
+      "https://www.instagram.com/punk.medallo"
     ],
     "contactPoint": {
       "@type": "ContactPoint",
@@ -82,6 +82,11 @@ export default function SiteNavigationSchema() {
         "@type": "WebPage",
         "name": "Registro Fotográfico",
         "url": "https://punkmedallo.com/fotos"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Paginas amigas",
+        "url": "https://punkmedallo.com/amigos"
       },
       {
         "@type": "WebPage",
